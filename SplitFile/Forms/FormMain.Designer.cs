@@ -39,7 +39,7 @@
 			this.DividerSplitPath = new MaterialSkin.Controls.MaterialDivider();
 			this.PanelSplitInfoAndControl = new System.Windows.Forms.Panel();
 			this.ButtonSplitAddFile = new MaterialSkin.Controls.MaterialFloatingActionButton();
-			this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+			this.ButtonSplitFile = new MaterialSkin.Controls.MaterialButton();
 			this.TableSplitHelperInfo = new System.Windows.Forms.TableLayoutPanel();
 			this.LabelSplitCountFilesDone = new MaterialSkin.Controls.MaterialLabel();
 			this.TableSplitHelperProgress = new System.Windows.Forms.TableLayoutPanel();
@@ -47,7 +47,7 @@
 			this.ProgressSplitForAllFile = new MaterialSkin.Controls.MaterialProgressBar();
 			this.LabelSplitForOneFile = new MaterialSkin.Controls.MaterialLabel();
 			this.LabelSplitForAllFile = new MaterialSkin.Controls.MaterialLabel();
-			this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+			this.DividerSplitInfoAndControl = new MaterialSkin.Controls.MaterialDivider();
 			this.TabSplit.SuspendLayout();
 			this.TabsSidebar.SuspendLayout();
 			this.PanelSplitInfoAndControl.SuspendLayout();
@@ -63,7 +63,7 @@
 			// 
 			// TabSplit
 			// 
-			this.TabSplit.Controls.Add(this.materialDivider1);
+			this.TabSplit.Controls.Add(this.DividerSplitInfoAndControl);
 			this.TabSplit.Controls.Add(this.PanelSplitInfoAndControl);
 			this.TabSplit.Controls.Add(this.DividerSplitPath);
 			this.TabSplit.Controls.Add(this.PanelSplitPath);
@@ -114,7 +114,7 @@
 			// PanelSplitInfoAndControl
 			// 
 			this.PanelSplitInfoAndControl.Controls.Add(this.TableSplitHelperInfo);
-			this.PanelSplitInfoAndControl.Controls.Add(this.materialButton1);
+			this.PanelSplitInfoAndControl.Controls.Add(this.ButtonSplitFile);
 			this.PanelSplitInfoAndControl.Controls.Add(this.ButtonSplitAddFile);
 			resources.ApplyResources(this.PanelSplitInfoAndControl, "PanelSplitInfoAndControl");
 			this.PanelSplitInfoAndControl.Name = "PanelSplitInfoAndControl";
@@ -128,19 +128,19 @@
 			this.ButtonSplitAddFile.Name = "ButtonSplitAddFile";
 			this.ButtonSplitAddFile.UseVisualStyleBackColor = true;
 			// 
-			// materialButton1
+			// ButtonSplitFile
 			// 
-			resources.ApplyResources(this.materialButton1, "materialButton1");
-			this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-			this.materialButton1.Depth = 0;
-			this.materialButton1.HighEmphasis = true;
-			this.materialButton1.Icon = null;
-			this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-			this.materialButton1.Name = "materialButton1";
-			this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-			this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-			this.materialButton1.UseAccentColor = false;
-			this.materialButton1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.ButtonSplitFile, "ButtonSplitFile");
+			this.ButtonSplitFile.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+			this.ButtonSplitFile.Depth = 0;
+			this.ButtonSplitFile.HighEmphasis = true;
+			this.ButtonSplitFile.Icon = null;
+			this.ButtonSplitFile.MouseState = MaterialSkin.MouseState.HOVER;
+			this.ButtonSplitFile.Name = "ButtonSplitFile";
+			this.ButtonSplitFile.NoAccentTextColor = System.Drawing.Color.Empty;
+			this.ButtonSplitFile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+			this.ButtonSplitFile.UseAccentColor = false;
+			this.ButtonSplitFile.UseVisualStyleBackColor = true;
 			// 
 			// TableSplitHelperInfo
 			// 
@@ -193,13 +193,13 @@
 			this.LabelSplitForAllFile.MouseState = MaterialSkin.MouseState.HOVER;
 			this.LabelSplitForAllFile.Name = "LabelSplitForAllFile";
 			// 
-			// materialDivider1
+			// DividerSplitInfoAndControl
 			// 
-			this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.materialDivider1.Depth = 0;
-			resources.ApplyResources(this.materialDivider1, "materialDivider1");
-			this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-			this.materialDivider1.Name = "materialDivider1";
+			this.DividerSplitInfoAndControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.DividerSplitInfoAndControl.Depth = 0;
+			resources.ApplyResources(this.DividerSplitInfoAndControl, "DividerSplitInfoAndControl");
+			this.DividerSplitInfoAndControl.MouseState = MaterialSkin.MouseState.HOVER;
+			this.DividerSplitInfoAndControl.Name = "DividerSplitInfoAndControl";
 			// 
 			// FormMain
 			// 
@@ -232,7 +232,7 @@
 		private System.Windows.Forms.Panel PanelSplitPath;
 		private System.Windows.Forms.Panel PanelSplitInfoAndControl;
 		private MaterialSkin.Controls.MaterialFloatingActionButton ButtonSplitAddFile;
-		private MaterialSkin.Controls.MaterialButton materialButton1;
+		private MaterialSkin.Controls.MaterialButton ButtonSplitFile;
 		private System.Windows.Forms.TableLayoutPanel TableSplitHelperInfo;
 		private MaterialSkin.Controls.MaterialLabel LabelSplitCountFilesDone;
 		private System.Windows.Forms.TableLayoutPanel TableSplitHelperProgress;
@@ -240,7 +240,7 @@
 		private MaterialSkin.Controls.MaterialProgressBar ProgressSplitForAllFile;
 		private MaterialSkin.Controls.MaterialLabel LabelSplitForOneFile;
 		private MaterialSkin.Controls.MaterialLabel LabelSplitForAllFile;
-		private MaterialSkin.Controls.MaterialDivider materialDivider1;
+		private MaterialSkin.Controls.MaterialDivider DividerSplitInfoAndControl;
 	}
 }
 

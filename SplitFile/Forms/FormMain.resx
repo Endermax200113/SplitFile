@@ -156,39 +156,291 @@
   <metadata name="TabSplit.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="materialDivider1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <metadata name="DividerSplitInfoAndControl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DividerSplitInfoAndControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="materialDivider1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="DividerSplitInfoAndControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 276</value>
   </data>
-  <data name="materialDivider1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="DividerSplitInfoAndControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="materialDivider1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DividerSplitInfoAndControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>786, 2</value>
   </data>
-  <data name="materialDivider1.TabIndex" type="System.Int32, mscorlib">
+  <data name="DividerSplitInfoAndControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="materialDivider1.Text" xml:space="preserve">
+  <data name="DividerSplitInfoAndControl.Text" xml:space="preserve">
     <value>materialDivider1</value>
   </data>
-  <data name="&gt;&gt;materialDivider1.Name" xml:space="preserve">
-    <value>materialDivider1</value>
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Name" xml:space="preserve">
+    <value>DividerSplitInfoAndControl</value>
   </data>
-  <data name="&gt;&gt;materialDivider1.Type" xml:space="preserve">
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Type" xml:space="preserve">
     <value>MaterialSkin.Controls.MaterialDivider, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;materialDivider1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Parent" xml:space="preserve">
     <value>TabSplit</value>
   </data>
-  <data name="&gt;&gt;materialDivider1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DividerSplitInfoAndControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="PanelSplitInfoAndControl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="TableSplitHelperInfo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TableSplitHelperInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="TableSplitHelperInfo.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <metadata name="LabelSplitCountFilesDone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LabelSplitCountFilesDone.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 21</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 19</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.Text" xml:space="preserve">
+    <value>0/0</value>
+  </data>
+  <data name="LabelSplitCountFilesDone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitCountFilesDone.Name" xml:space="preserve">
+    <value>LabelSplitCountFilesDone</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitCountFilesDone.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitCountFilesDone.Parent" xml:space="preserve">
+    <value>TableSplitHelperInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitCountFilesDone.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="TableSplitHelperProgress.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TableSplitHelperProgress.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <metadata name="LabelSplitForAllFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LabelSplitForAllFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="LabelSplitForAllFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSplitForAllFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LabelSplitForAllFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="LabelSplitForAllFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 37</value>
+  </data>
+  <data name="LabelSplitForAllFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 19</value>
+  </data>
+  <data name="LabelSplitForAllFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelSplitForAllFile.Text" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="LabelSplitForAllFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForAllFile.Name" xml:space="preserve">
+    <value>LabelSplitForAllFile</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForAllFile.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForAllFile.Parent" xml:space="preserve">
+    <value>TableSplitHelperProgress</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForAllFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="LabelSplitForOneFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LabelSplitForOneFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="LabelSplitForOneFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSplitForOneFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LabelSplitForOneFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="LabelSplitForOneFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 6</value>
+  </data>
+  <data name="LabelSplitForOneFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 19</value>
+  </data>
+  <data name="LabelSplitForOneFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LabelSplitForOneFile.Text" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="LabelSplitForOneFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForOneFile.Name" xml:space="preserve">
+    <value>LabelSplitForOneFile</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForOneFile.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForOneFile.Parent" xml:space="preserve">
+    <value>TableSplitHelperProgress</value>
+  </data>
+  <data name="&gt;&gt;LabelSplitForOneFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="ProgressSplitForOneFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ProgressSplitForOneFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ProgressSplitForOneFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ProgressSplitForOneFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 13</value>
+  </data>
+  <data name="ProgressSplitForOneFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 5</value>
+  </data>
+  <data name="ProgressSplitForOneFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForOneFile.Name" xml:space="preserve">
+    <value>ProgressSplitForOneFile</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForOneFile.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForOneFile.Parent" xml:space="preserve">
+    <value>TableSplitHelperProgress</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForOneFile.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="ProgressSplitForAllFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ProgressSplitForAllFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ProgressSplitForAllFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ProgressSplitForAllFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 44</value>
+  </data>
+  <data name="ProgressSplitForAllFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 5</value>
+  </data>
+  <data name="ProgressSplitForAllFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForAllFile.Name" xml:space="preserve">
+    <value>ProgressSplitForAllFile</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForAllFile.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForAllFile.Parent" xml:space="preserve">
+    <value>TableSplitHelperProgress</value>
+  </data>
+  <data name="&gt;&gt;ProgressSplitForAllFile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TableSplitHelperProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableSplitHelperProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 0</value>
+  </data>
+  <data name="TableSplitHelperProgress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TableSplitHelperProgress.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TableSplitHelperProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 62</value>
+  </data>
+  <data name="TableSplitHelperProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TableSplitHelperProgress.Name" xml:space="preserve">
+    <value>TableSplitHelperProgress</value>
+  </data>
+  <data name="&gt;&gt;TableSplitHelperProgress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableSplitHelperProgress.Parent" xml:space="preserve">
+    <value>TableSplitHelperInfo</value>
+  </data>
+  <data name="&gt;&gt;TableSplitHelperProgress.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableSplitHelperProgress.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelSplitForAllFile" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelSplitForOneFile" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForOneFile" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForAllFile" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TableSplitHelperInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableSplitHelperInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
+  </data>
+  <data name="TableSplitHelperInfo.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TableSplitHelperInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>577, 62</value>
+  </data>
+  <data name="TableSplitHelperInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;TableSplitHelperInfo.Name" xml:space="preserve">
     <value>TableSplitHelperInfo</value>
   </data>
@@ -204,17 +456,65 @@
   <data name="TableSplitHelperInfo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelSplitCountFilesDone" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableSplitHelperProgress" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="&gt;&gt;materialButton1.Name" xml:space="preserve">
-    <value>materialButton1</value>
+  <metadata name="ButtonSplitFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ButtonSplitFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="&gt;&gt;materialButton1.Type" xml:space="preserve">
+  <data name="ButtonSplitFile.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="ButtonSplitFile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ButtonSplitFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 13</value>
+  </data>
+  <data name="ButtonSplitFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="ButtonSplitFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 36</value>
+  </data>
+  <data name="ButtonSplitFile.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ButtonSplitFile.Text" xml:space="preserve">
+    <value>Дробить файл</value>
+  </data>
+  <data name="&gt;&gt;ButtonSplitFile.Name" xml:space="preserve">
+    <value>ButtonSplitFile</value>
+  </data>
+  <data name="&gt;&gt;ButtonSplitFile.Type" xml:space="preserve">
     <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;materialButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ButtonSplitFile.Parent" xml:space="preserve">
     <value>PanelSplitInfoAndControl</value>
   </data>
-  <data name="&gt;&gt;materialButton1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ButtonSplitFile.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <metadata name="ButtonSplitAddFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ButtonSplitAddFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="ButtonSplitAddFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonSplitAddFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>727, 3</value>
+  </data>
+  <data name="ButtonSplitAddFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 56</value>
+  </data>
+  <data name="ButtonSplitAddFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ButtonSplitAddFile.Text" xml:space="preserve">
+    <value>Добавить файл для дробления</value>
   </data>
   <data name="&gt;&gt;ButtonSplitAddFile.Name" xml:space="preserve">
     <value>ButtonSplitAddFile</value>
@@ -523,372 +823,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabsSidebar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ButtonSplitAddFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="ButtonSplitAddFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ButtonSplitAddFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>727, 3</value>
-  </data>
-  <data name="ButtonSplitAddFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 56</value>
-  </data>
-  <data name="ButtonSplitAddFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ButtonSplitAddFile.Text" xml:space="preserve">
-    <value>Добавить файл для дробления</value>
-  </data>
-  <data name="&gt;&gt;ButtonSplitAddFile.Name" xml:space="preserve">
-    <value>ButtonSplitAddFile</value>
-  </data>
-  <data name="&gt;&gt;ButtonSplitAddFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialFloatingActionButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ButtonSplitAddFile.Parent" xml:space="preserve">
-    <value>PanelSplitInfoAndControl</value>
-  </data>
-  <data name="&gt;&gt;ButtonSplitAddFile.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="materialButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="materialButton1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="materialButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 13</value>
-  </data>
-  <data name="materialButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="materialButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 36</value>
-  </data>
-  <data name="materialButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="materialButton1.Text" xml:space="preserve">
-    <value>Дробить файл</value>
-  </data>
-  <data name="&gt;&gt;materialButton1.Name" xml:space="preserve">
-    <value>materialButton1</value>
-  </data>
-  <data name="&gt;&gt;materialButton1.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialButton1.Parent" xml:space="preserve">
-    <value>PanelSplitInfoAndControl</value>
-  </data>
-  <data name="&gt;&gt;materialButton1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableSplitHelperInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="TableSplitHelperInfo.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Name" xml:space="preserve">
-    <value>LabelSplitCountFilesDone</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Parent" xml:space="preserve">
-    <value>TableSplitHelperInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Name" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Parent" xml:space="preserve">
-    <value>TableSplitHelperInfo</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableSplitHelperProgress.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelSplitForAllFile" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelSplitForOneFile" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForOneFile" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForAllFile" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="TableSplitHelperInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TableSplitHelperInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 3, 0</value>
-  </data>
-  <data name="TableSplitHelperInfo.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TableSplitHelperInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>577, 62</value>
-  </data>
-  <data name="TableSplitHelperInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperInfo.Name" xml:space="preserve">
-    <value>TableSplitHelperInfo</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperInfo.Parent" xml:space="preserve">
-    <value>PanelSplitInfoAndControl</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TableSplitHelperInfo.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelSplitCountFilesDone" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableSplitHelperProgress" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 62</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.Text" xml:space="preserve">
-    <value>0/0</value>
-  </data>
-  <data name="LabelSplitCountFilesDone.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Name" xml:space="preserve">
-    <value>LabelSplitCountFilesDone</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.Parent" xml:space="preserve">
-    <value>TableSplitHelperInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitCountFilesDone.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TableSplitHelperProgress.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Name" xml:space="preserve">
-    <value>LabelSplitForAllFile</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Name" xml:space="preserve">
-    <value>LabelSplitForOneFile</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Name" xml:space="preserve">
-    <value>ProgressSplitForOneFile</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Name" xml:space="preserve">
-    <value>ProgressSplitForAllFile</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TableSplitHelperProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableSplitHelperProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 0</value>
-  </data>
-  <data name="TableSplitHelperProgress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="TableSplitHelperProgress.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TableSplitHelperProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>545, 62</value>
-  </data>
-  <data name="TableSplitHelperProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Name" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.Parent" xml:space="preserve">
-    <value>TableSplitHelperInfo</value>
-  </data>
-  <data name="&gt;&gt;TableSplitHelperProgress.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableSplitHelperProgress.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelSplitForAllFile" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelSplitForOneFile" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForOneFile" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ProgressSplitForAllFile" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="ProgressSplitForOneFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="ProgressSplitForOneFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 13</value>
-  </data>
-  <data name="ProgressSplitForOneFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 5</value>
-  </data>
-  <data name="ProgressSplitForOneFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Name" xml:space="preserve">
-    <value>ProgressSplitForOneFile</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForOneFile.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ProgressSplitForAllFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="ProgressSplitForAllFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 44</value>
-  </data>
-  <data name="ProgressSplitForAllFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 5</value>
-  </data>
-  <data name="ProgressSplitForAllFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Name" xml:space="preserve">
-    <value>ProgressSplitForAllFile</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialProgressBar, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;ProgressSplitForAllFile.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LabelSplitForOneFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="LabelSplitForOneFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSplitForOneFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="LabelSplitForOneFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 6</value>
-  </data>
-  <data name="LabelSplitForOneFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 19</value>
-  </data>
-  <data name="LabelSplitForOneFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelSplitForOneFile.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
-  <data name="LabelSplitForOneFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Name" xml:space="preserve">
-    <value>LabelSplitForOneFile</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForOneFile.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelSplitForAllFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="LabelSplitForAllFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSplitForAllFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="LabelSplitForAllFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 37</value>
-  </data>
-  <data name="LabelSplitForAllFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 19</value>
-  </data>
-  <data name="LabelSplitForAllFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LabelSplitForAllFile.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
-  <data name="LabelSplitForAllFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Name" xml:space="preserve">
-    <value>LabelSplitForAllFile</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.Parent" xml:space="preserve">
-    <value>TableSplitHelperProgress</value>
-  </data>
-  <data name="&gt;&gt;LabelSplitForAllFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
