@@ -2,7 +2,9 @@
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SplitFile
 {
@@ -123,6 +125,10 @@ namespace SplitFile
 			}
 		}*/
 
+		private List<string> _listDrives = new List<string>();
+
+		private int IdPanel { get; set; } = 0;
+
 		public FormMain() {
 			InitializeComponent();
 
@@ -136,6 +142,61 @@ namespace SplitFile
 					Accent.Pink700,
 					TextShade.WHITE
 			);
+		}
+
+		private void LoadLogicalDrives() {
+			foreach (DriveInfo drive in DriveInfo.GetDrives())
+				if (drive.IsReady)
+					_listDrives.Add($"{drive.Name} {drive.VolumeLabel}");
+		}
+
+		private void AddFirstPanel() {
+			FlowLayoutPanel panel = new FlowLayoutPanel()
+			{
+				Dock = DockStyle.Left,
+				FlowDirection = FlowDirection.TopDown,
+				Margin = new Padding(0),
+				AutoSize = true,
+				WrapContents = false,
+				Name = $"PanelSplitFiles{IdPanel}"
+			};
+
+			panel.HorizontalScroll.Maximum = 0;
+			panel.AutoScroll = false;
+			panel.VerticalScroll.Visible = true;
+			panel.AutoScroll = true;
+
+			PanelSplitFiles.Controls.Add(panel);
+
+			AddFirstButtons(panel);
+			IdPanel++;
+		}
+
+		private void AddFirstButtons(FlowLayoutPanel panel) {
+			bool first = true;
+			int idButton = 0;
+
+            foreach (string nameDrive in _listDrives)
+            {
+				MaterialButton btn = new MaterialButton()
+				{
+					Anchor = AnchorStyles.Left | AnchorStyles.Right,
+					Text = nameDrive,
+					Margin = first ? new Padding(4, 6, 4, 6) : new Padding(4, 0, 4, 6),
+					Name = $"ButtonSplit{idButton++}OfPanel{IdPanel}"
+				};
+
+				if (first)
+					first = false;
+
+				panel.Controls.Add(btn);
+            }
+        }
+
+		private void FormMain_Load(object sender, EventArgs e)
+		{
+			LoadLogicalDrives();
+			AddFirstPanel();
 		}
 	}
 }
