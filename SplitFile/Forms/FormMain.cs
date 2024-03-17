@@ -183,6 +183,8 @@ namespace SplitFile
 					Anchor = AnchorStyles.Left | AnchorStyles.Right,
 					Text = nameDrive,
 					Margin = first ? new Padding(4, 6, 4, 6) : new Padding(4, 0, 4, 6),
+					HighEmphasis = false,
+					Icon = Properties.Resources.folder,
 					Name = $"ButtonSplit{idButton++}OfPanel{IdPanel}"
 				};
 
