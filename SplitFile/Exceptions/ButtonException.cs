@@ -7,14 +7,16 @@ namespace SplitFile.Exceptions
 		public enum TypeButtonException {
 			ERR_BUTTON_NOT_EXISTS,
 			ERR_BUTTON_NOT_BELONG,
+			ERR_BUTTON_NO_EVENTS,
 			ERR_BUTTON_UNKNOWN
 		}
 
-		private const string ERR_NOT_EXISTS = "The button is not exists";
+		private const string ERR_NOT_EXISTS = "The button does not exists";
 		private const string ERR_NOT_BELONG = "This object does not belong to the material button";
+		private const string ERR_NO_EVENTS = "There are no events in the button";
 		private const string ERR_UNKNOWN = "Unknown error";
 
-		public TypeButtonException TypeException { get; private set;}
+		public TypeButtonException TypeException { get; private set; }
 
 		public ButtonException() : base(ERR_UNKNOWN) {
 			TypeException = TypeButtonException.ERR_BUTTON_UNKNOWN;
@@ -36,6 +38,8 @@ namespace SplitFile.Exceptions
 					return ERR_NOT_EXISTS;
 				case TypeButtonException.ERR_BUTTON_NOT_BELONG:
 					return ERR_NOT_BELONG;
+				case TypeButtonException.ERR_BUTTON_NO_EVENTS:
+					return ERR_NO_EVENTS;
 				case TypeButtonException.ERR_BUTTON_UNKNOWN:
 				default:
 					return ERR_UNKNOWN;

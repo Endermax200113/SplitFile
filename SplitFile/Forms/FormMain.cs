@@ -204,8 +204,11 @@ namespace SplitFile
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_EXISTS);
 				else if (!(sender is MaterialButton))
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_BELONG);
-
-
+				else if (e is null)
+					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NO_EVENTS);
+				else {
+					
+				}
 			} catch (ButtonException err) {
 				string title;
 				string text;
@@ -253,6 +256,25 @@ namespace SplitFile
 							"Программа будет закрыта после нажатии кнопки \'ОК\'";
 #endif
 						break;
+					case ButtonException.TypeButtonException.ERR_BUTTON_NO_EVENTS:
+#if DEBUG
+						title = "В кнопке нет аргументов событии";
+						text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
+							$"Для кнопки {((MaterialButton)sender).Name} отсутствуют аргументы событии\n" +
+							"\tв файле \'FormMain.cs\'\n" +
+							"\tв методе \'ButtonFiles_Click(object, EventArgs)\'.\n\n" +
+							"Стек ошибки:\n" +
+							$"{err}";
+#else
+						title = "Программная ошибка";
+						text = "Эта ошибка вызвана не из-за Вас.\n" +
+							"В кнопке, на которой Вы нажали, по какой-то причине вызван сбой.\n" +
+							"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
+							"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
+							$"Ошибка: {err.TypeException}\n\n" +
+							"Программа будет закрыта после нажатии кнопки \'ОК\'";
+#endif
+						break;
 					case ButtonException.TypeButtonException.ERR_BUTTON_UNKNOWN:
 					default:
 #if DEBUG
@@ -286,7 +308,6 @@ namespace SplitFile
 		{
 			LoadLogicalDrives();
 			AddFirstPanel();
-			ButtonFiles_Click(null, null);
 		}
 	}
 }

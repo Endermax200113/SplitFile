@@ -159,6 +159,111 @@
   <metadata name="PanelSplitFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="DividerSplitInfoAndControl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelSplitInfoAndControl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DividerSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PanelSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;PanelSplitFiles.Name" xml:space="preserve">
+    <value>PanelSplitFiles</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitFiles.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Name" xml:space="preserve">
+    <value>DividerSplitInfoAndControl</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialDivider, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitInfoAndControl.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitInfoAndControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitInfoAndControl.Name" xml:space="preserve">
+    <value>PanelSplitInfoAndControl</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitInfoAndControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitInfoAndControl.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitInfoAndControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Name" xml:space="preserve">
+    <value>DividerSplitPath</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialDivider, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Name" xml:space="preserve">
+    <value>PanelSplitPath</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TabSplit.ImageKey" xml:space="preserve">
+    <value>split.png</value>
+  </data>
+  <data name="TabSplit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 39</value>
+  </data>
+  <data name="TabSplit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TabSplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>786, 340</value>
+  </data>
+  <data name="TabSplit.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabSplit.Text" xml:space="preserve">
+    <value>Дробление</value>
+  </data>
+  <data name="&gt;&gt;TabSplit.Name" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;TabSplit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabSplit.Parent" xml:space="preserve">
+    <value>TabsSidebar</value>
+  </data>
+  <data name="&gt;&gt;TabSplit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="PanelSplitFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="PanelSplitFiles.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -299,99 +404,6 @@
   </data>
   <data name="&gt;&gt;PanelSplitInfoAndControl.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <metadata name="DividerSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="DividerSplitPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="DividerSplitPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 48</value>
-  </data>
-  <data name="DividerSplitPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="DividerSplitPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>786, 2</value>
-  </data>
-  <data name="DividerSplitPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="DividerSplitPath.Text" xml:space="preserve">
-    <value>materialDivider1</value>
-  </data>
-  <data name="&gt;&gt;DividerSplitPath.Name" xml:space="preserve">
-    <value>DividerSplitPath</value>
-  </data>
-  <data name="&gt;&gt;DividerSplitPath.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialDivider, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;DividerSplitPath.Parent" xml:space="preserve">
-    <value>TabSplit</value>
-  </data>
-  <data name="&gt;&gt;DividerSplitPath.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="PanelSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="PanelSplitPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="PanelSplitPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="PanelSplitPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="PanelSplitPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>786, 48</value>
-  </data>
-  <data name="PanelSplitPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;PanelSplitPath.Name" xml:space="preserve">
-    <value>PanelSplitPath</value>
-  </data>
-  <data name="&gt;&gt;PanelSplitPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSplitPath.Parent" xml:space="preserve">
-    <value>TabSplit</value>
-  </data>
-  <data name="&gt;&gt;PanelSplitPath.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="TabSplit.ImageKey" xml:space="preserve">
-    <value>split.png</value>
-  </data>
-  <data name="TabSplit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 39</value>
-  </data>
-  <data name="TabSplit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="TabSplit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>786, 340</value>
-  </data>
-  <data name="TabSplit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TabSplit.Text" xml:space="preserve">
-    <value>Дробление</value>
-  </data>
-  <data name="&gt;&gt;TabSplit.Name" xml:space="preserve">
-    <value>TabSplit</value>
-  </data>
-  <data name="&gt;&gt;TabSplit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabSplit.Parent" xml:space="preserve">
-    <value>TabsSidebar</value>
-  </data>
-  <data name="&gt;&gt;TabSplit.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="TableSplitHelperInfo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -822,6 +834,69 @@
   <data name="&gt;&gt;ButtonSplitAddFile.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="DividerSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DividerSplitPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="DividerSplitPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 48</value>
+  </data>
+  <data name="DividerSplitPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="DividerSplitPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>786, 2</value>
+  </data>
+  <data name="DividerSplitPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="DividerSplitPath.Text" xml:space="preserve">
+    <value>materialDivider1</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Name" xml:space="preserve">
+    <value>DividerSplitPath</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialDivider, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;DividerSplitPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="PanelSplitPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="PanelSplitPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="PanelSplitPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="PanelSplitPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="PanelSplitPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>786, 48</value>
+  </data>
+  <data name="PanelSplitPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Name" xml:space="preserve">
+    <value>PanelSplitPath</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.Parent" xml:space="preserve">
+    <value>TabSplit</value>
+  </data>
+  <data name="&gt;&gt;PanelSplitPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="TabSettings.ImageKey" xml:space="preserve">
     <value>settings.png</value>
   </data>
@@ -1065,6 +1140,9 @@
         ghWUwerOZlvNIYQQQgghhBBCCCGEEEIIIVReZA0jaxjhFWQNw8gaRj4usoZhZA1D3BmEAAABAAIABAAI
         ABAAIABAAIAAAAEAGpsA8IygehHPCOIZQTwjCAMAAAAAAEjS/wHEF3dYOubzTQAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Дробление и слияние файлов</value>
