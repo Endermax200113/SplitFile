@@ -1,21 +1,5 @@
 # SplitFile
 SplitFile - это программа, которая позволяет дробить огромные файлы на несколько частей. Помимо этого, программа может соединять мелкие файлы в один единый файл.
-<!-- НА ЗАМЕТКУ! -->
-<!--
-	Для вставки файлов нужно:
-		1. Вставить FlowPanel с следующими свойствами:
-			- Dock: Left,
-			- FlowDirection: TopDown,
-			- Margin: 0; 0; 0; 0,
-			- AutoSize: True,
-			- Код:
-				<panel>.HorizontalScroll.Maximum = 0;
-				<panel>.AutoScroll = false;
-				<panel>.VerticalScroll.Visible = true;
-				<panel>.AutoScroll = true;
-		2. Вставить MaterialButton с следующими свойствами:
-			- Anchor: Left, Right.
--->
 ## Версии
 ### v0.0.3
 - Были отключены некоторые элементы, которые ещё не управляют файлом для дробления;
