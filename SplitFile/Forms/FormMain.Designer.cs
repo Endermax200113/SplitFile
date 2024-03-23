@@ -45,10 +45,10 @@
 			this.ButtonSplitFile = new MaterialSkin.Controls.MaterialButton();
 			this.ButtonSplitAddFile = new MaterialSkin.Controls.MaterialFloatingActionButton();
 			this.DividerSplitPath = new MaterialSkin.Controls.MaterialDivider();
-			this.PanelSplitPath = new System.Windows.Forms.Panel();
 			this.TabsSidebar = new MaterialSkin.Controls.MaterialTabControl();
 			this.TabSettings = new System.Windows.Forms.TabPage();
 			this.ImagesIconsSidebar = new System.Windows.Forms.ImageList(this.components);
+			this.PanelSplitPath = new System.Windows.Forms.FlowLayoutPanel();
 			this.TabSplit.SuspendLayout();
 			this.PanelSplitInfoAndControl.SuspendLayout();
 			this.TableSplitHelperInfo.SuspendLayout();
@@ -64,11 +64,11 @@
 			// 
 			// TabSplit
 			// 
+			this.TabSplit.Controls.Add(this.PanelSplitPath);
 			this.TabSplit.Controls.Add(this.PanelSplitFiles);
 			this.TabSplit.Controls.Add(this.DividerSplitInfoAndControl);
 			this.TabSplit.Controls.Add(this.PanelSplitInfoAndControl);
 			this.TabSplit.Controls.Add(this.DividerSplitPath);
-			this.TabSplit.Controls.Add(this.PanelSplitPath);
 			resources.ApplyResources(this.TabSplit, "TabSplit");
 			this.TabSplit.Name = "TabSplit";
 			this.TabSplit.UseVisualStyleBackColor = true;
@@ -170,16 +170,11 @@
 			// 
 			// DividerSplitPath
 			// 
+			resources.ApplyResources(this.DividerSplitPath, "DividerSplitPath");
 			this.DividerSplitPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.DividerSplitPath.Depth = 0;
-			resources.ApplyResources(this.DividerSplitPath, "DividerSplitPath");
 			this.DividerSplitPath.MouseState = MaterialSkin.MouseState.HOVER;
 			this.DividerSplitPath.Name = "DividerSplitPath";
-			// 
-			// PanelSplitPath
-			// 
-			resources.ApplyResources(this.PanelSplitPath, "PanelSplitPath");
-			this.PanelSplitPath.Name = "PanelSplitPath";
 			// 
 			// TabsSidebar
 			// 
@@ -207,6 +202,11 @@
 			this.ImagesIconsSidebar.Images.SetKeyName(0, "split.png");
 			this.ImagesIconsSidebar.Images.SetKeyName(1, "merge.png");
 			this.ImagesIconsSidebar.Images.SetKeyName(2, "settings.png");
+			// 
+			// PanelSplitPath
+			// 
+			resources.ApplyResources(this.PanelSplitPath, "PanelSplitPath");
+			this.PanelSplitPath.Name = "PanelSplitPath";
 			// 
 			// FormMain
 			// 
@@ -237,7 +237,6 @@
 		private System.Windows.Forms.ImageList ImagesIconsSidebar;
 		private System.Windows.Forms.TabPage TabSettings;
 		private MaterialSkin.Controls.MaterialDivider DividerSplitPath;
-		private System.Windows.Forms.Panel PanelSplitPath;
 		private System.Windows.Forms.Panel PanelSplitInfoAndControl;
 		private MaterialSkin.Controls.MaterialFloatingActionButton ButtonSplitAddFile;
 		private MaterialSkin.Controls.MaterialButton ButtonSplitFile;
@@ -250,6 +249,7 @@
 		private MaterialSkin.Controls.MaterialLabel LabelSplitForAllFile;
 		private MaterialSkin.Controls.MaterialDivider DividerSplitInfoAndControl;
 		private System.Windows.Forms.Panel PanelSplitFiles;
+		private System.Windows.Forms.FlowLayoutPanel PanelSplitPath;
 	}
 }
 

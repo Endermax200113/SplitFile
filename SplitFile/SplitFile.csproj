@@ -57,6 +57,15 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ButtonDirectory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\ButtonFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\PanelDirectory.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormMain.resx">
