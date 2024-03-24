@@ -48,22 +48,21 @@ namespace SplitFile.GUI
 			try {
 				if (sender is null)
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_EXISTS);
-				else if (!(sender is ButtonFile))
+				else if (!(sender is ButtonFile file))
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_BELONG);
 				else if (e is null)
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NO_EVENTS);
 				else {
-					ButtonFile btn = PanelDirectory.SelectedButtonFile;
+					if (!HighEmphasis) {
+						ButtonFile btn = PanelDirectory.SelectedButtonFile;
 
-					if (btn != null)
-					{
-						btn.HighEmphasis = false;
-						btn.Click += AddClick;
+						if (btn != null)
+							btn.HighEmphasis = false;
+
+						PanelDirectory.SelectedButtonFile = file;
+						HighEmphasis = true;
+						FormMain.ButtonSplit.Enabled = true;
 					}
-
-					btn = this;
-					HighEmphasis = true;
-					Click -= AddClick;
 				}
 			} 
 			catch (ButtonException err) 

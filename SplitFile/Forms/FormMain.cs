@@ -129,6 +129,7 @@ namespace SplitFile
 		}*/
 
 		public static int IdPanel { get; set; } = 0;
+		internal static MaterialButton ButtonSplit { get; private set; }
 
 		public FormMain() {
 			InitializeComponent();
@@ -143,6 +144,8 @@ namespace SplitFile
 					Accent.Pink700,
 					TextShade.WHITE
 			);
+
+			ButtonSplit = ButtonSplitFile;
 		}
 
 		private void AddFirstPanel() {
