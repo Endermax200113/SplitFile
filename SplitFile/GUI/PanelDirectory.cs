@@ -1,6 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace SplitFile.GUI
 				DirectoryInfo dir, 
 				bool first = false
 		) : base() {
-			Dock = DockStyle.Left;
+			Dock = DockStyle.Right;
 			FlowDirection = FlowDirection.TopDown;
 			Margin = new Padding(0);
 			AutoSize = true;
@@ -74,28 +75,48 @@ namespace SplitFile.GUI
             foreach (DirectoryInfo dir in Directory.GetDirectories())
             {
 				if (!dir.Attributes.HasFlag(FileAttributes.System)) {
-					ButtonDirectory btn = new ButtonDirectory(PanelMain, PanelPath, dir.Name, IdPanel, idButton, dir, first);
-					Controls.Add(btn);
-					ListButtonDirectories.Add(btn);
-					
-					if (first)
-						first = false;
+					if (AccessAccept(dir)) {
+						ButtonDirectory btn = new ButtonDirectory(PanelMain, PanelPath, dir.Name, IdPanel, idButton, dir, first);
+						Controls.Add(btn);
+						ListButtonDirectories.Add(btn);
 
-					idButton++;
+						if (first)
+							first = false;
+
+						idButton++;
+					}
 				}
             }
 
 			foreach (FileInfo file in Directory.GetFiles())
 			{
 				if (!file.Attributes.HasFlag(FileAttributes.System)) {
-					ButtonFile btn = new ButtonFile(PanelMain, PanelPath, file.Name, IdPanel, idButton, file, first);
-					Controls.Add(btn);
-					ListButtonFiles.Add(btn);
+					if (AccessAccept(file)) {
+						ButtonFile btn = new ButtonFile(PanelMain, PanelPath, file.Name, IdPanel, idButton, file, first);
+						Controls.Add(btn);
+						ListButtonFiles.Add(btn);
 
-					if (first)
-						first = false;
+						if (first)
+							first = false;
 
-					idButton++;
+						idButton++;
+					}
+				}
+			}
+
+			bool AccessAccept(FileSystemInfo sys) {
+				try
+				{
+					if (sys is DirectoryInfo dir)
+						dir.GetAccessControl();
+					else if (sys is FileInfo file)
+						file.GetAccessControl();
+
+					return true;
+				}
+				catch (UnauthorizedAccessException)
+				{
+					return false;
 				}
 			}
 		}
@@ -127,7 +148,7 @@ namespace SplitFile.GUI
 		private void AddDivider() {
 			MaterialDivider divider = new MaterialDivider()
 			{
-				Dock = DockStyle.Left,
+				Dock = DockStyle.Right,
 				Margin = new Padding(0),
 				Width = 2,
 				Name = $"DividerSplitDirectories{IdPanel}"

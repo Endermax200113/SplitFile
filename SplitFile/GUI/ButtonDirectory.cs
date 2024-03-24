@@ -40,8 +40,28 @@ namespace SplitFile.GUI
 			PanelPath = panelPath;
 			PanelMain = panelMain;
 
-			Click += AddClick;
-        }
+			Init();
+		}
+
+		private void Init() {
+			IEnumerable<FileSystemInfo> files = Directory.EnumerateFileSystemInfos();
+			int count = CheckSystemFile(files);
+
+			if (count != 0)
+				Click += AddClick;
+			else
+				Enabled = false;
+		}
+
+		private int CheckSystemFile(IEnumerable<FileSystemInfo> files) {
+			int count = files.Count();
+
+            foreach (FileSystemInfo sysFile in files)
+            	if (sysFile.Attributes.HasFlag(FileAttributes.System))
+					count--;
+            
+            return count;
+		}
 
 		private void AddClick(object sender, EventArgs e)
 		{
@@ -49,7 +69,7 @@ namespace SplitFile.GUI
 			{
 				if (sender is null)
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_EXISTS);
-				else if (!(sender is ButtonDirectory))
+				else if (!(sender is ButtonDirectory directory))
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NOT_BELONG);
 				else if (e is null)
 					throw new ButtonException(ButtonException.TypeButtonException.ERR_BUTTON_NO_EVENTS);
@@ -90,7 +110,7 @@ namespace SplitFile.GUI
 							btn.HighEmphasis = false;
 						}
 
-						panelCurrent.SelectedButtonDir = (ButtonDirectory)sender;
+						panelCurrent.SelectedButtonDir = directory;
 						UseAccentColor = true;
 						HighEmphasis = true;
 					}
