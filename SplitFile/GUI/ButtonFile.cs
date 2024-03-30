@@ -28,6 +28,7 @@ namespace SplitFile.GUI
 			HighEmphasis = false;
 			Icon = Properties.Resources.file;
 			Name = $"ButtonSplit{idButton}OfPanel{idPanel}";
+			DoubleBuffered = true;
 
 			File = file;
 			IdPanel = idPanel;

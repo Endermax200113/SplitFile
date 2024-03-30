@@ -34,6 +34,7 @@ namespace SplitFile.GUI
 			AutoScroll = false;
 			VerticalScroll.Visible = true;
 			AutoScroll = true;
+			DoubleBuffered = true;
 
 			Directory = dir;
 			IdPanel = idPanel;

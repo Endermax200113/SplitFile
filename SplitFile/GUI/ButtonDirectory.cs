@@ -28,6 +28,7 @@ namespace SplitFile.GUI
 			HighEmphasis = false;
 			Icon = Properties.Resources.folder;
 			Name = $"ButtonSplit{idButton}OfPanel{idPanel}";
+			DoubleBuffered = true;
 
 			Directory = dir;
 			IdPanel = idPanel;
@@ -73,13 +74,17 @@ namespace SplitFile.GUI
 						{
 							int count = PanelDirectory.ListPanels.Count - 1;
 							List<PanelDirectory> listPanels = PanelDirectory.ListPanels;
+							List<ButtonPath> listButtons = ButtonPath.ListButtons;
 
 							while (IdPanel < count)
 							{
 								PanelDirectory panel = listPanels[count];
 								panel.Remove();
 								listPanels.RemoveAt(count);
-								FormMain.PanelPathSplit.Controls[$"ButtonSplitPath{count}"].Dispose();
+
+								ButtonPath btnPath = listButtons[count];
+								btnPath.Dispose();
+								listButtons.RemoveAt(count);
 
 								count--;
 							}

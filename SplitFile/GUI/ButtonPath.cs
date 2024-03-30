@@ -30,6 +30,7 @@ namespace SplitFile.GUI
 			Name = $"ButtonSplitPath{idButton}";
 			IdButton = idButton;
 			Directory = dir;
+			DoubleBuffered = true;
 
 			Init();
 		}
