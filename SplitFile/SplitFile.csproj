@@ -63,6 +63,9 @@
     <Compile Include="GUI\ButtonFile.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GUI\ButtonPath.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GUI\PanelDirectory.cs">
       <SubType>Component</SubType>
     </Compile>

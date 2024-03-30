@@ -129,7 +129,9 @@ namespace SplitFile
 		}*/
 
 		public static int IdPanel { get; set; } = 0;
-		internal static MaterialButton ButtonSplit { get; private set; }
+		internal static MaterialButton ButtonFileSplit { get; private set; }
+		internal static Panel PanelMainSplit { get; private set; }
+		internal static FlowLayoutPanel PanelPathSplit { get; private set; }
 
 		public FormMain() {
 			InitializeComponent();
@@ -145,19 +147,20 @@ namespace SplitFile
 					TextShade.WHITE
 			);
 
-			ButtonSplit = ButtonSplitFile;
+			ButtonFileSplit = ButtonSplitFile;
+			PanelMainSplit = PanelSplitFiles;
+			PanelPathSplit = PanelSplitPath;
 		}
 
-		private void AddFirstPanel() {
-			PanelDirectory panel = new PanelDirectory(PanelSplitFiles, PanelSplitPath, IdPanel, null, true);
-
+		private void Init() {
+			PanelDirectory panel = new PanelDirectory(IdPanel, null);
 			PanelSplitFiles.Controls.Add(panel);
 			IdPanel++;
 		}
 
 		private void FormMain_Load(object sender, EventArgs e)
 		{
-			AddFirstPanel();
+			Init();
 		}
 	}
 }

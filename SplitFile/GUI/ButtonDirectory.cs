@@ -15,21 +15,16 @@ namespace SplitFile.GUI
 		internal DirectoryInfo Directory { get; private set; }
 		internal int IdPanel { get; private set; }
 		internal int IdButton { get; private set; }
-		private FlowLayoutPanel PanelPath { get; set; }
-		private Panel PanelMain { get; set; }
 
 		internal ButtonDirectory(
-				Panel panelMain, 
-				FlowLayoutPanel panelPath, 
 				string text, 
 				int idPanel, 
 				int idButton, 
-				DirectoryInfo dir, 
-				bool first = false
+				DirectoryInfo dir
 		) : base() {
 			Anchor = AnchorStyles.Left | AnchorStyles.Right;
 			Text = text;
-			Margin = first ? new Padding(4, 6, 4, 6) : new Padding(4, 3, 4, 6);
+			Margin = idButton == 0 ? new Padding(4, 6, 4, 3) : new Padding(4, 3, 4, 3);
 			HighEmphasis = false;
 			Icon = Properties.Resources.folder;
 			Name = $"ButtonSplit{idButton}OfPanel{idPanel}";
@@ -37,8 +32,6 @@ namespace SplitFile.GUI
 			Directory = dir;
 			IdPanel = idPanel;
 			IdButton = idButton;
-			PanelPath = panelPath;
-			PanelMain = panelMain;
 
 			Init();
 		}
@@ -86,19 +79,16 @@ namespace SplitFile.GUI
 								PanelDirectory panel = listPanels[count];
 								panel.Remove();
 								listPanels.RemoveAt(count);
+								FormMain.PanelPathSplit.Controls[$"ButtonSplitPath{count}"].Dispose();
 
 								count--;
 							}
 
-							//TODO Удалить кнопки в пути после текущей кнопки
-
 							FormMain.IdPanel = IdPanel + 1;
-
-							//TODO Обновить данные в пути после удаления кнопок
 						}
 
-						PanelDirectory newPanel = new PanelDirectory(PanelMain, PanelPath, FormMain.IdPanel, Directory);
-						PanelMain.Controls.Add(newPanel);
+						PanelDirectory newPanel = new PanelDirectory(FormMain.IdPanel, Directory);
+						FormMain.PanelMainSplit.Controls.Add(newPanel);
 						FormMain.IdPanel++;
 
 						PanelDirectory panelCurrent = PanelDirectory.ListPanels[IdPanel];

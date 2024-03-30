@@ -14,21 +14,15 @@ namespace SplitFile.GUI
 	{
 		internal static List<PanelDirectory> ListPanels { get; private set; } = new List<PanelDirectory>();
 		internal DirectoryInfo Directory { get; private set; }
-		private Panel PanelMain { get; set; }
-		private bool IsFirst { get; set; }
 		internal int IdPanel { get; private set; }
-		private FlowLayoutPanel PanelPath { get; set; }
 		internal List<ButtonDirectory> ListButtonDirectories { get; private set; } = new List<ButtonDirectory>();
 		internal List<ButtonFile> ListButtonFiles { get; private set; } = new List<ButtonFile>();
 		internal ButtonDirectory SelectedButtonDir { get; set; } = null;
 		internal static ButtonFile SelectedButtonFile { get; set; } = null;
 
 		internal PanelDirectory(
-				Panel mainPanel, 
-				FlowLayoutPanel panelPath, 
 				int idPanel, 
-				DirectoryInfo dir, 
-				bool first = false
+				DirectoryInfo dir
 		) : base() {
 			Dock = DockStyle.Right;
 			FlowDirection = FlowDirection.TopDown;
@@ -42,10 +36,7 @@ namespace SplitFile.GUI
 			AutoScroll = true;
 
 			Directory = dir;
-			PanelMain = mainPanel;
-			IsFirst = first;
 			IdPanel = idPanel;
-			PanelPath = panelPath;
 
 			Init();
 		}
@@ -53,35 +44,49 @@ namespace SplitFile.GUI
 		private void Init() {
 			ListPanels.Add(this);
 
-			if (!IsFirst)
-				AddDivider();
-
 			if (Directory is null)
 				LoadDrives();
-			else
+			else {
+				AddDivider();
 				LoadDirectoriesAndFiles();
+			}
+
+			AddButtonPath();
+		}
+
+		private void AddButtonPath()
+		{
+			ButtonPath btn = new ButtonPath(
+					Directory is null 
+						? "Начало" 
+						: Directory.Name,
+					IdPanel,
+					Directory
+			);
+
+			FormMain.PanelPathSplit.Controls.Add(btn);
 		}
 
 		internal void Remove() {
-			PanelMain.Controls[$"DividerSplitDirectories{IdPanel}"].Dispose();
+			FormMain.PanelMainSplit.Controls[$"DividerSplitDirectories{IdPanel}"].Dispose();
 			Dispose();
+
+			foreach (ButtonFile btn in ListButtonFiles)
+				if (btn == SelectedButtonFile)
+					FormMain.ButtonFileSplit.Enabled = false;
 		}
 
 		private void LoadDirectoriesAndFiles()
 		{
 			int idButton = 0;
-			bool first = true;
 
             foreach (DirectoryInfo dir in Directory.GetDirectories())
             {
 				if (!dir.Attributes.HasFlag(FileAttributes.System)) {
 					if (AccessAccept(dir)) {
-						ButtonDirectory btn = new ButtonDirectory(PanelMain, PanelPath, dir.Name, IdPanel, idButton, dir, first);
+						ButtonDirectory btn = new ButtonDirectory(dir.Name, IdPanel, idButton, dir);
 						Controls.Add(btn);
 						ListButtonDirectories.Add(btn);
-
-						if (first)
-							first = false;
 
 						idButton++;
 					}
@@ -92,12 +97,9 @@ namespace SplitFile.GUI
 			{
 				if (!file.Attributes.HasFlag(FileAttributes.System)) {
 					if (AccessAccept(file)) {
-						ButtonFile btn = new ButtonFile(PanelMain, PanelPath, file.Name, IdPanel, idButton, file, first);
+						ButtonFile btn = new ButtonFile(file.Name, IdPanel, idButton, file);
 						Controls.Add(btn);
 						ListButtonFiles.Add(btn);
-
-						if (first)
-							first = false;
 
 						idButton++;
 					}
@@ -122,7 +124,6 @@ namespace SplitFile.GUI
 		}
 
 		private void LoadDrives() {
-			bool first = true;
 			int idButton = 0;
 
 			foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -132,10 +133,7 @@ namespace SplitFile.GUI
 					string dirName = drive.Name;
 					string nameDrive = $"{dirName} {drive.VolumeLabel}";
 					DirectoryInfo dir = drive.RootDirectory;
-					ButtonDirectory btn = new ButtonDirectory(PanelMain, PanelPath, nameDrive, IdPanel, idButton, dir, first);
-
-					if (first)
-						first = false;
+					ButtonDirectory btn = new ButtonDirectory(nameDrive, IdPanel, idButton, dir);
 
 					Controls.Add(btn);
 					ListButtonDirectories.Add(btn);
@@ -154,7 +152,7 @@ namespace SplitFile.GUI
 				Name = $"DividerSplitDirectories{IdPanel}"
 			};
 
-			PanelMain.Controls.Add(divider);
+			FormMain.PanelMainSplit.Controls.Add(divider);
 		}
 	}
 }
