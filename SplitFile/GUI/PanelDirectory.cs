@@ -35,7 +35,6 @@ namespace SplitFile.GUI
 			VerticalScroll.Visible = true;
 			AutoScroll = true;
 			DoubleBuffered = true;
-
 			Directory = dir;
 			IdPanel = idPanel;
 
@@ -61,8 +60,7 @@ namespace SplitFile.GUI
 					Directory is null 
 						? "Начало" 
 						: Directory.Name,
-					IdPanel,
-					Directory
+					IdPanel
 			);
 
 			FormMain.PanelPathSplit.Controls.Add(btn);

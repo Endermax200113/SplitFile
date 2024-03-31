@@ -164,6 +164,7 @@
 			this.ButtonSplitAddFile.MouseState = MaterialSkin.MouseState.HOVER;
 			this.ButtonSplitAddFile.Name = "ButtonSplitAddFile";
 			this.ButtonSplitAddFile.UseVisualStyleBackColor = true;
+			this.ButtonSplitAddFile.Click += new System.EventHandler(this.ButtonSplitAddFile_Click);
 			// 
 			// DividerSplitPath
 			// 

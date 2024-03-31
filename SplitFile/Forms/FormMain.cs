@@ -128,10 +128,11 @@ namespace SplitFile
 			}
 		}*/
 
-		public static int IdPanel { get; set; } = 0;
+		internal static int IdPanel { get; set; } = 0;
 		internal static MaterialButton ButtonFileSplit { get; private set; }
 		internal static Panel PanelMainSplit { get; private set; }
 		internal static FlowLayoutPanel PanelPathSplit { get; private set; }
+		private static FormMain _form;
 
 		public FormMain() {
 			InitializeComponent();
@@ -150,6 +151,7 @@ namespace SplitFile
 			ButtonFileSplit = ButtonSplitFile;
 			PanelMainSplit = PanelSplitFiles;
 			PanelPathSplit = PanelSplitPath;
+			_form = this;
 		}
 
 		private void Init() {
@@ -161,6 +163,31 @@ namespace SplitFile
 		private void FormMain_Load(object sender, EventArgs e)
 		{
 			Init();
+		}
+
+		private void ButtonSplitAddFile_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!ButtonException.CheckError<MaterialButton>(sender, e))
+				{
+
+				}
+			}
+			catch (ButtonException err)
+			{
+				ButtonException.SendMessage(
+						err,
+						nameof(FormMain),
+						nameof(ButtonSplitAddFile_Click),
+						((MaterialFloatingActionButton)sender).Name
+				);
+			}
+		}
+
+		public static void CloseProgram()
+		{
+			_form.Close();
 		}
 	}
 }
