@@ -50,6 +50,7 @@
 			this.PanelSplitPath = new System.Windows.Forms.FlowLayoutPanel();
 			this.PanelSplitHelperFiles = new System.Windows.Forms.Panel();
 			this.PanelSplitFiles = new System.Windows.Forms.Panel();
+			this.DialogSplitOpenFile = new System.Windows.Forms.OpenFileDialog();
 			this.TabSplit.SuspendLayout();
 			this.PanelSplitInfoAndControl.SuspendLayout();
 			this.TableSplitHelperInfo.SuspendLayout();
@@ -217,6 +218,11 @@
 			resources.ApplyResources(this.PanelSplitFiles, "PanelSplitFiles");
 			this.PanelSplitFiles.Name = "PanelSplitFiles";
 			// 
+			// DialogSplitOpenFile
+			// 
+			resources.ApplyResources(this.DialogSplitOpenFile, "DialogSplitOpenFile");
+			this.DialogSplitOpenFile.RestoreDirectory = true;
+			// 
 			// FormMain
 			// 
 			resources.ApplyResources(this, "$this");
@@ -262,6 +268,7 @@
 		private System.Windows.Forms.FlowLayoutPanel PanelSplitPath;
 		private System.Windows.Forms.Panel PanelSplitHelperFiles;
 		private System.Windows.Forms.Panel PanelSplitFiles;
+		private System.Windows.Forms.OpenFileDialog DialogSplitOpenFile;
 	}
 }
 

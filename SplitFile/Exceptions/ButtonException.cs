@@ -8,17 +8,19 @@ namespace SplitFile.Exceptions
 	{
 		public enum TypeButtonException {
 			ERR_BUTTON_NOT_EXISTS,
+			ERR_BUTTON_NOT_FOUND,
 			ERR_BUTTON_NOT_BELONG,
 			ERR_BUTTON_NO_EVENTS,
 			ERR_BUTTON_UNKNOWN
 		}
 
 		private const string ERR_NOT_EXISTS = "The button does not exists";
+		private const string ERR_NOT_FOUND = "Couldn't find the button";
 		private const string ERR_NOT_BELONG = "This object does not belong to the material button";
 		private const string ERR_NO_EVENTS = "There are no events in the button";
 		private const string ERR_UNKNOWN = "Unknown error";
 
-		public TypeButtonException TypeException { get; private set; }
+		public TypeButtonException TypeException { get; }
 
 		public ButtonException() : base(ERR_UNKNOWN) {
 			TypeException = TypeButtonException.ERR_BUTTON_UNKNOWN;
@@ -38,6 +40,8 @@ namespace SplitFile.Exceptions
 			switch (type) {
 				case TypeButtonException.ERR_BUTTON_NOT_EXISTS:
 					return ERR_NOT_EXISTS;
+				case TypeButtonException.ERR_BUTTON_NOT_FOUND:
+					return ERR_NOT_FOUND;
 				case TypeButtonException.ERR_BUTTON_NOT_BELONG:
 					return ERR_NOT_BELONG;
 				case TypeButtonException.ERR_BUTTON_NO_EVENTS:
@@ -48,11 +52,11 @@ namespace SplitFile.Exceptions
 			}
 		}
 
-		internal static bool CheckError<T>(object sender, EventArgs e)
+		public static bool CheckError<ButtonClass>(object sender, EventArgs e)
 		{
 			if (sender is null)
 				throw new ButtonException(TypeButtonException.ERR_BUTTON_NOT_EXISTS);
-			else if (!(sender is T))
+			else if (!(sender is ButtonClass))
 				throw new ButtonException(TypeButtonException.ERR_BUTTON_NOT_BELONG);
 			else if (e is null)
 				throw new ButtonException(TypeButtonException.ERR_BUTTON_NO_EVENTS);
@@ -60,7 +64,7 @@ namespace SplitFile.Exceptions
 			return false;
 		}
 
-		internal static void SendMessage(ButtonException err, string file, string method, string name)
+		public static void SendMessage(ButtonException err, string file, string method)
 		{
 			string title;
 			string text;
@@ -90,6 +94,25 @@ namespace SplitFile.Exceptions
 						"Программа будет закрыта после нажатии кнопки \'ОК\'";
 #endif
 					break;
+				case TypeButtonException.ERR_BUTTON_NOT_FOUND:
+#if DEBUG
+					title = "Ненайденная кнопка";
+					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
+						"Не удалось найти кнопку\n" +
+						$"\tв файле \'{file}\'\n" +
+						$"\tв методе \'{method}\'.\n\n" +
+						"Стек ошибки:\n" +
+						$"{err}";
+#else
+					title = "Программная ошибка";
+					text = "Эта ошибка вызвана не из-за Вас.\n" +
+						"Программе не удалось найти нужную кнопку. Это баг.\n" +
+						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
+						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
+						$"Ошибка: {err.TypeException}\n\n" +
+						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+#endif
+					break;
 				case TypeButtonException.ERR_BUTTON_NOT_BELONG:
 #if DEBUG
 					title = "Объект не является кнопкой";
@@ -113,7 +136,7 @@ namespace SplitFile.Exceptions
 #if DEBUG
 					title = "В кнопке нет аргументов событии";
 					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						$"Для кнопки {name} отсутствуют аргументы событии\n" +
+						$"Для этой кнопки отсутствуют аргументы событии\n" +
 						$"\tв файле \'{file}\'\n" +
 						$"\tв методе \'{method}\'.\n\n" +
 						"Стек ошибки:\n" +
@@ -133,7 +156,7 @@ namespace SplitFile.Exceptions
 #if DEBUG
 					title = "Неизвестная ошибка";
 					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Неизвестная ошибка, которая присутствует\n" +
+						"Неизвестная ошибка, связанная с кнопкой, которая присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
 						$"\tв методе \'{method}\'\n" +
 						"\tв блоке try.\n\n" +

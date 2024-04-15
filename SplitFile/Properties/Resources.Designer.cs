@@ -89,5 +89,14 @@ namespace SplitFile.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}.
+        /// </summary>
+        internal static string GuidMyComputer {
+            get {
+                return ResourceManager.GetString("GuidMyComputer", resourceCulture);
+            }
+        }
     }
 }

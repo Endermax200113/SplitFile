@@ -6,7 +6,10 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("SplitFile")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Эта программа разделеяет файл на несколько частей,\n" +
+							   "а также соединяет части файлов воедино. Эта прог-\n" +
+							   "рамма предназначена для дробления огромного файла\n" +
+							   "и соединение мелких файлов в одно единое целое.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SplitFile")]
@@ -27,10 +30,9 @@ using System.Runtime.InteropServices;
 //      Основной номер версии
 //      Дополнительный номер версии
 //      Номер сборки
-//      Редакция
 //
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.6")]
+[assembly: AssemblyFileVersion("0.0.6")]

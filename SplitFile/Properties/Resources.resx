@@ -127,4 +127,8 @@
   <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GuidMyComputer" xml:space="preserve">
+    <value>::{20D04FE0-3AEA-1069-A2D8-08002B30309D}</value>
+    <comment>GUID Мой компьютер</comment>
+  </data>
 </root>

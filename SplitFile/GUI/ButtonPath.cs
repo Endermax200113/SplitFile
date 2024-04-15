@@ -10,32 +10,39 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using MaterialSkin.Controls;
 using SplitFile.Exceptions;
+using SplitFile.Util;
 
 namespace SplitFile.GUI
 {
-	internal class ButtonPath : MaterialButton
+	internal sealed class ButtonPath : MaterialButton
 	{
-		internal static List<ButtonPath> ListButtons { get; private set; } = new List<ButtonPath>();
-		private int IdButton { get; set; }
+		internal int IdButton { get; }
+		internal string Path { get; }
 
-		internal ButtonPath(
-				string text, 
-				int idButton
-		) : base()
+		private bool _inited = false;
+		private readonly FileManager _fileManager;
+
+		internal ButtonPath(FileManager fileManager, int idButton, string text, string path) : base()
 		{
 			Text = text;
 			Name = $"ButtonSplitPath{idButton}";
 			IdButton = idButton;
 			DoubleBuffered = true;
+			Path = path;
+
+			_fileManager = fileManager;
 
 			Init();
 		}
 
 		private void Init()
 		{
-			ListButtons.Add(this);
+			if (_inited)
+				return;
 
 			Click += AddClick;
+
+			_inited = true;
 		}
 
 		private void AddClick(object sender, EventArgs e)
@@ -44,41 +51,18 @@ namespace SplitFile.GUI
 			{
 				if (!ButtonException.CheckError<ButtonPath>(sender, e))
 				{
-					if (IdButton + 1 < FormMain.IdPanel)
-					{
-						int count = ListButtons.Count - 1;
-						List<PanelDirectory> listPanels = PanelDirectory.ListPanels;
+					int id = _fileManager.FreeId;
 
-						while (IdButton < count)
-						{
-							PanelDirectory panel = listPanels[count];
-							panel.Remove();
-							listPanels.RemoveAt(count);
-
-                            ButtonPath btn = ListButtons[count];
-							btn.Dispose();
-							ListButtons.RemoveAt(count);
-
-							count--;
-						}
-
-						ButtonDirectory btnDir = listPanels[count].SelectedButtonDir;
-
-						if (btnDir != null)
-						{
-							btnDir.UseAccentColor = false;
-							btnDir.HighEmphasis = false;
-						}
-					}
+					if (IdButton + 1 < id)
+						_fileManager.ChangePath(Path);
 				}
 			}
 			catch (ButtonException err)
 			{
 				ButtonException.SendMessage(
-						err, 
-						nameof(ButtonPath), 
-						nameof(AddClick), 
-						((MaterialButton)sender).Name
+					err,
+					nameof(ButtonPath),
+					nameof(AddClick)
 				);
 			}
 		}
