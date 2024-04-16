@@ -36,8 +36,10 @@ namespace SplitFile
 		}
 
 		private void Init() {
-			_fileManagerSplit = new FileManager(PanelSplitPath, PanelSplitFiles, ButtonSplitFile);
+			Log.Init();
 
+			_fileManagerSplit = new FileManager(PanelSplitPath, PanelSplitFiles, ButtonSplitFile);
+			
 			_fileManagerSplit.Init();
 		}
 
@@ -83,6 +85,41 @@ namespace SplitFile
 		public static void CloseProgram() {
 			_form.Close();
 			Application.Exit();
+		}
+
+		private void ButtonSplitFile_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!ButtonException.CheckError<MaterialButton>(sender, e))
+				{
+					if (_fileManagerSplit.SelectedButtonFile == null || _fileManagerSplit.SelectedButtonFile.File == null)
+						throw new FileAndDirException(FileAndDirException.TypeFileAndDirException.ERR_FILE_NOT_EXIST);
+
+
+				}
+			}
+			catch (ButtonException err)
+			{
+				ButtonException.SendMessage(
+					err, 
+					nameof(FormMain), 
+					nameof(ButtonSplitAddFile_Click)
+				);
+			}
+			catch (FileAndDirException err)
+			{
+				FileAndDirException.SendMessage(
+					err,
+					nameof(FormMain),
+					nameof(ButtonSplitAddFile_Click)
+				);
+			}
+		}
+
+		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Log.End();
 		}
 	}
 }
