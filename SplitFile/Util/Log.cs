@@ -17,11 +17,12 @@ namespace SplitFile.Util
 
 		private static bool _inited = false;
 		private static bool _ended = false;
+		private static string _pathFile = "";
 
-		private const string TYPE_MESSAGE_INFO = "INFO";
-		private const string TYPE_MESSAGE_WARN = "WARN";
-		private const string TYPE_MESSAGE_ERROR = "ERROR";
-		private const string TYPE_MESSAGE_DEBUG = "DEBUG";
+		private const string TYPE_MESSAGE_INFO = "[INFO] ";
+		private const string TYPE_MESSAGE_WARN = "[WARN] ";
+		private const string TYPE_MESSAGE_ERROR = "[ERROR]";
+		private const string TYPE_MESSAGE_DEBUG = "[DEBUG]";
 
 		public static void Init()
 		{
@@ -40,7 +41,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(err, nameof(Log), nameof(Init));
+				err.SendMessage(nameof(Log), nameof(Init));
 			}
 		}
 
@@ -59,20 +60,27 @@ namespace SplitFile.Util
 			Message(TYPE_MESSAGE_ERROR, message);
 		}
 
+		public static void Error(Exception err)
+		{
+			Message(TYPE_MESSAGE_ERROR, err);
+		}
+
 		public static void Debug(string message)
 		{
 			Message(TYPE_MESSAGE_DEBUG, message);
 		}
 
-		private static void Message(string type, string message)
+		private static void Message(string type, object message)
 		{
 			try
 			{
-				if (!_inited || _ended)
+				if (_ended)
+					return;
+
+				if (!_inited)
 					throw new InitException(InitException.TypeInitException.ERR_INITIAL_NOT_INITIALIZED);
 
-
-				string fullMsg = $"[{GetDateTime()}] [{type}] {message}";
+				string fullMsg = $"[{GetDateTime()}] {type} {message}";
 
 				Console.WriteLine(fullMsg);
 				Stream.WriteLine(fullMsg);
@@ -80,7 +88,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(err, nameof(Log), nameof(Message));
+				err.SendMessage(nameof(Log), nameof(Message));
 			}
 		}
 
@@ -100,8 +108,23 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(err, nameof(Log), nameof(End));
+				err.SendMessage(nameof(Log), nameof(End));
 			}
+		}
+
+		public static string GetPathFile()
+		{
+			try
+			{
+				if (!_inited)
+					throw new InitException(InitException.TypeInitException.ERR_INITIAL_NOT_INITIALIZED);
+			}
+			catch (InitException err)
+			{
+				err.SendMessage(nameof(Log), nameof(GetPathFile));
+			}
+
+			return _pathFile;
 		}
 
 		private static void NewStream()
@@ -109,9 +132,9 @@ namespace SplitFile.Util
 			DateTime now = DateTime.Now;
 
 			string nameFile = $"{now:yyyy-MM-dd_HH.mm.ss}.log";
-			string fullPath = $"{Path}\\{nameFile}";
+			_pathFile = $"{Path}\\{nameFile}";
 
-			Stream = File.AppendText(fullPath);
+			Stream = File.AppendText(_pathFile);
 		}
 
 		private static string GetDateTime()

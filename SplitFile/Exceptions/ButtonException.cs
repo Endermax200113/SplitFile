@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SplitFile.Exceptions
 {
-	public class ButtonException : Exception
+	public class ButtonException : Exception, IException
 	{
 		public enum TypeButtonException {
 			ERR_BUTTON_NOT_EXISTS,
@@ -64,120 +64,75 @@ namespace SplitFile.Exceptions
 			return false;
 		}
 
-		public static void SendMessage(ButtonException err, string file, string method)
+		public void SendMessage(string file, string method)
 		{
-			string title;
+			string title = null;
 			string text;
-			MessageBoxButtons btn = MessageBoxButtons.OK;
-			FlexibleMaterialForm.ButtonsPosition positionBtn = FlexibleMaterialForm.ButtonsPosition.Right;
 
-			Console.WriteLine(err);
-
-			switch (err.TypeException)
+			switch (TypeException)
 			{
 				case TypeButtonException.ERR_BUTTON_NOT_EXISTS:
 #if DEBUG
 					title = "Несуществующая кнопка";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Несуществующий объект присутствует\n" +
+					text = "Несуществующий объект присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Программа посчитала, что кнопка - это пустой объект, что на самом деле это не так. Это баг.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программа посчитала, что кнопка - это пустой объект, что на самом деле это не так.";
 #endif
 					break;
 				case TypeButtonException.ERR_BUTTON_NOT_FOUND:
 #if DEBUG
 					title = "Ненайденная кнопка";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Не удалось найти кнопку\n" +
+					text = "Не удалось найти кнопку\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Программе не удалось найти нужную кнопку. Это баг.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программе не удалось найти нужную кнопку.";
 #endif
 					break;
 				case TypeButtonException.ERR_BUTTON_NOT_BELONG:
 #if DEBUG
 					title = "Объект не является кнопкой";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Объект, которая не является кнопкой, присутствует\n" +
+					text = "Объект, которая не является кнопкой, присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Программа посчитала, что этот объект, на которой Вы нажали, не является кнопкой. Это баг.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программа посчитала, что этот объект, на которой Вы нажали, не является кнопкой.";
 #endif
 					break;
 				case TypeButtonException.ERR_BUTTON_NO_EVENTS:
 #if DEBUG
 					title = "В кнопке нет аргументов событии";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						$"Для этой кнопки отсутствуют аргументы событии\n" +
+					text = "Для этой кнопки отсутствуют аргументы событии\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"В кнопке, на которой Вы нажали, по какой-то причине вызван сбой.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "В кнопке, на которой Вы нажали, по какой-то причине вызван сбой.";
 #endif
 					break;
 				case TypeButtonException.ERR_BUTTON_UNKNOWN:
 				default:
 #if DEBUG
 					title = "Неизвестная ошибка";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Неизвестная ошибка, связанная с кнопкой, которая присутствует\n" +
+					text = "Неизвестная ошибка, связанная с кнопкой, которая присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
 						$"\tв методе \'{method}\'\n" +
-						"\tв блоке try.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						"\tв блоке try.";
 #else
-					title = "Неизвестная программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Мы не знаем, из-за чего вызвана ошибка после клика кнопки.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n" +
-						"Стек ошибки:\n" +
-						$"{err}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Мы не знаем, из-за чего вызвана ошибка после клика кнопки.";
 #endif
 					break;
 			}
 
-			MaterialMessageBox.Show(text, title, btn, positionBtn);
-			FormMain.CloseProgram();
+			AnotherException.SendUsualMessage(
+				AnotherException.TypeError.BUG,
+				AnotherException.ErrorBy.Application,
+				this,
+				title,
+				text,
+				TypeException.ToString()
+			);
 		}
 	}
 }

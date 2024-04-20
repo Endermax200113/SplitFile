@@ -15,7 +15,6 @@ namespace SplitFile
 {
 	public sealed partial class FormMain : MaterialForm
 	{
-		private static FormMain _form;
 		private static FileManager _fileManagerSplit;
 
 		public FormMain() {
@@ -31,12 +30,12 @@ namespace SplitFile
 					Accent.Pink700,
 					TextShade.WHITE
 			);
-
-			_form = this;
 		}
 
 		private void Init() {
 			Log.Init();
+			Log.Info("Start application...");
+			Log.Info("====================");
 
 			_fileManagerSplit = new FileManager(PanelSplitPath, PanelSplitFiles, ButtonSplitFile);
 			
@@ -74,8 +73,7 @@ namespace SplitFile
 			}
 			catch (ButtonException err)
 			{
-				ButtonException.SendMessage(
-						err,
+				err.SendMessage(
 						nameof(FormMain),
 						nameof(ButtonSplitAddFile_Click)
 				);
@@ -83,7 +81,8 @@ namespace SplitFile
 		}
 
 		public static void CloseProgram() {
-			_form.Close();
+			Log.Info("Aplication closing...");
+
 			Application.Exit();
 		}
 
@@ -101,24 +100,24 @@ namespace SplitFile
 			}
 			catch (ButtonException err)
 			{
-				ButtonException.SendMessage(
-					err, 
+				err.SendMessage(
 					nameof(FormMain), 
 					nameof(ButtonSplitAddFile_Click)
 				);
 			}
 			catch (FileAndDirException err)
 			{
-				FileAndDirException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FormMain),
 					nameof(ButtonSplitAddFile_Click)
 				);
 			}
 		}
 
-		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+		private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
 		{
+			Log.Info("==================");
+			Log.Info("Application closed");
 			Log.End();
 		}
 	}

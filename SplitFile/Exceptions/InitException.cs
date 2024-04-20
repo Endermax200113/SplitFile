@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SplitFile.Exceptions
 {
-	public class InitException : Exception
+	public class InitException : Exception, IException
 	{
 		public enum TypeInitException
 		{
@@ -48,84 +48,70 @@ namespace SplitFile.Exceptions
 			}
 		}
 
-		public static void SendMessage(InitException err, string file, string method)
+		public void SendMessage(string file, string method)
 		{
-			string title;
+			string title = null;
 			string text;
-			MessageBoxButtons btn = MessageBoxButtons.OK;
-			FlexibleMaterialForm.ButtonsPosition positionBtn = FlexibleMaterialForm.ButtonsPosition.Right;
 
-			Console.WriteLine(err);
-
-			switch (err.TypeException)
+			switch (TypeException)
 			{
 				case TypeInitException.ERR_INITIAL_NOT_INITIALIZED:
 #if DEBUG
 					title = "Неинициализированный объект";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Объект не был инициализирован\n" +
-						$"\tв файле: {file}\n" +
-						$"\tв методе: {method}\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+					text = "Объект не был инициализирован\n" +
+						$"\tв файле: '{file}'\n" +
+						$"\tв методе: '{method}'";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Программа не инициализировал нужный объект, который без этого программа дальше работать не будет.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программа не инициализировал нужный объект, который без этого программа дальше работать не будет.";
 #endif
+					AnotherException.SendUsualMessage(
+						AnotherException.TypeError.BUG,
+						AnotherException.ErrorBy.Application,
+						this,
+						title,
+						text,
+						TypeException.ToString()
+					);
 					break;
 				case TypeInitException.ERR_INITIAL_FAILED:
 #if DEBUG
 					title = "Неинициализированный объект";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Не удалось инициализировать объект\n" +
-						$"\tв файле: {file}\n" +
-						$"\tв методе: {method}\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+					text = "Не удалось инициализировать объект\n" +
+						$"\tв файле: '{file}'\n" +
+						$"\tв методе: '{method}'";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Программе не смог инициализировать нужный объект. Это серьёзный баг.\n" +
-						"Если Вы видете эту ошибку, пожалуйста не поленитесь, немедленно напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n" +
-						"Стек ошибки:\n" +
-						$"{err}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программе не смог инициализировать нужный объект.";
 #endif
+					AnotherException.SendUsualMessage(
+						AnotherException.TypeError.SEVERE_BUG, 
+						AnotherException.ErrorBy.Application, 
+						this, 
+						title, 
+						text, 
+						TypeException.ToString()
+					);
 					break;
 				case TypeInitException.ERR_INITIAL_UNKNOWN:
 				default:
 #if DEBUG
 					title = "Неизвестная ошибка";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Неизвестная ошибка, связанная с инициализацией объекта, которая присутствует\n" +
-						$"\tв файле: {file}\n" +
-						$"\tв методе: {method}\n" +
-						"\tв блоке try.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+					text = "Неизвестная ошибка, связанная с инициализацией объекта, которая присутствует\n" +
+						$"\tв файле: '{file}'\n" +
+						$"\tв методе: '{method}'\n" +
+						"\tв блоке 'try'.";
 #else
-					title = "Неизвестная программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Мы не знаем, из-за чего вызвана ошибка после попытки инициализации объекта.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n" +
-						"Стек ошибки:\n" +
-						$"{err}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Мы не знаем, из-за чего вызвана ошибка после попытки инициализации объекта.";
 #endif
+					AnotherException.SendUsualMessage(
+						AnotherException.TypeError.BUG,
+						AnotherException.ErrorBy.Application,
+						this,
+						title,
+						text,
+						TypeException.ToString()
+					);
 					break;
 			}
-
-			MaterialMessageBox.Show(text, title, btn, positionBtn);
-			FormMain.CloseProgram();
 		}
 	}
 }

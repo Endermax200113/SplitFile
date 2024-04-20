@@ -46,6 +46,7 @@ namespace SplitFile.Util
 			if (_inited)
 				return;
 
+			Log.Debug("Initializing file manager...");
 			LoadStartPanel();
 
 			_inited = true;
@@ -53,6 +54,7 @@ namespace SplitFile.Util
 
 		private void LoadStartPanel()
 		{
+			Log.Debug("Loading start panel...");
 			Add(null);
 		}
 
@@ -100,8 +102,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(SelectButtonFile)
 				);
@@ -162,8 +163,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(SelectButtonDir)
 				);
@@ -186,6 +186,8 @@ namespace SplitFile.Util
 			}
 			else
 			{
+				Log.Debug("Adding start panel and path button...");
+
 				try
 				{
 					if (FreeId != 0)
@@ -284,8 +286,7 @@ namespace SplitFile.Util
 			}
 			catch (ButtonException err)
 			{
-				ButtonException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(FindAndSelectButtonDirectory)
 				);
@@ -313,8 +314,7 @@ namespace SplitFile.Util
 			}
 			catch (ButtonException err)
 			{
-				ButtonException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(FindAndSelectButtonDirectory)
 				);
@@ -419,24 +419,21 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				InitException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(ChangePath)
 				);
 			}
 			catch (FileAndDirException err)
 			{
-				FileAndDirException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(ChangePath)
 				);
 			}
 			catch(ButtonException err)
 			{
-				ButtonException.SendMessage(
-					err,
+				err.SendMessage(
 					nameof(FileManager),
 					nameof(ChangePath)
 				);

@@ -53,6 +53,7 @@
     <Compile Include="Exceptions\AnotherException.cs" />
     <Compile Include="Exceptions\ButtonException.cs" />
     <Compile Include="Exceptions\FileAndDirException.cs" />
+    <Compile Include="Exceptions\IException.cs" />
     <Compile Include="Exceptions\InitException.cs" />
     <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>

@@ -232,7 +232,7 @@
 			this.DrawerShowIconsWhenHidden = true;
 			this.DrawerTabControl = this.TabsSidebar;
 			this.Name = "FormMain";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
 			this.Load += new System.EventHandler(this.FormMain_Load);
 			this.TabSplit.ResumeLayout(false);
 			this.PanelSplitHelperFiles.ResumeLayout(false);

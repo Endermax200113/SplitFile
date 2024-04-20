@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SplitFile.Exceptions
 {
-	public class FileAndDirException : Exception
+	public class FileAndDirException : Exception, IException
 	{
 		public enum TypeFileAndDirException
 		{
@@ -64,139 +64,85 @@ namespace SplitFile.Exceptions
 			}
 		}
 
-		public static void SendMessage(FileAndDirException err, string file, string method)
+		public void SendMessage(string file, string method)
 		{
-			string title;
+			string title = null;
 			string text;
-			MessageBoxButtons btn = MessageBoxButtons.OK;
-			FlexibleMaterialForm.ButtonsPosition positionBtn = FlexibleMaterialForm.ButtonsPosition.Right;
 
-			Console.WriteLine(err);
-
-			switch (err.TypeException)
+			switch (TypeException)
 			{
 				case TypeFileAndDirException.ERR_PATH_NOT_EXIST:
 #if DEBUG
 					title = "Несуществующий путь";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Несуществующий путь присутствует\n" +
+					text = "Несуществующий путь присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка, возможно, вызвана не из-за Вас.\n" +
-						"Этот указанный путь не существует.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Этот указанный путь не существует.";
 #endif
 					break;
 				case TypeFileAndDirException.ERR_FILE_NOT_FOUND:
 #if DEBUG
 					title = "Ненайденный файл";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Не удалось найти указанный файл\n" +
+					text = "Не удалось найти указанный файл\n" +
 						$"\tв программном файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка, возможно, вызвана не из-за Вас.\n" +
-						"Программе не удалось найти указанный файл.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программе не удалось найти указанный файл.";
 #endif
 					break;
 				case TypeFileAndDirException.ERR_FILE_NOT_EXIST:
 #if DEBUG
 					title = "Несуществующий файл";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Указанный файл не существует\n" +
+					text = "Указанный файл не существует\n" +
 						$"\tв программном файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка, возможно, вызвана не из-за Вас.\n" +
-						"Указанный файл не существует.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Указанный файл не существует.";
 #endif
 					break;
 				case TypeFileAndDirException.ERR_DIR_NOT_FOUND:
 #if DEBUG
 					title = "Ненайденный каталог";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Не удалось найти указанный каталог\n" +
+					text = "Не удалось найти указанный каталог\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка, возможно, вызвана не из-за Вас.\n" +
-						"Программе не удалось найти указанную папку.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Программе не удалось найти указанную папку.";
 #endif
 					break;
 				case TypeFileAndDirException.ERR_DIR_NOT_EXIST:
 #if DEBUG
 					title = "Несуществующий каталог";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Указанный каталог не существует\n" +
+					text = "Указанный каталог не существует\n" +
 						$"\tв файле \'{file}\'\n" +
-						$"\tв методе \'{method}\'.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						$"\tв методе \'{method}\'.";
 #else
-					title = "Программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Указанная папка не существует.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Указанная папка не существует.";
 #endif
 					break;
 				case TypeFileAndDirException.ERR_FILEANDDIR_UNKNOWN:
 				default:
 #if DEBUG
 					title = "Неизвестная ошибка";
-					text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-						"Неизвестная ошибка, связанная с файлом и каталогом, которая присутствует\n" +
+					text = "Неизвестная ошибка, связанная с файлом и каталогом, которая присутствует\n" +
 						$"\tв файле \'{file}\'\n" +
 						$"\tв методе \'{method}\'\n" +
-						"\tв блоке try.\n\n" +
-						"Стек ошибки:\n" +
-						$"{err}";
+						"\tв блоке 'try'.";
 #else
-					title = "Неизвестная программная ошибка";
-					text = "Эта ошибка вызвана не из-за Вас.\n" +
-						"Мы не знаем, из-за чего вызвана ошибка, связанная с файлом и папкой.\n" +
-						"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-						"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-						$"Ошибка: {err.TypeException}\n" +
-						"Стек ошибки:\n" +
-						$"{err}\n\n" +
-						"Программа будет закрыта после нажатии кнопки \'ОК\'";
+					text = "Мы не знаем, из-за чего вызвана ошибка, связанная с файлом и папкой.";
 #endif
 					break;
 			}
 
-			MaterialMessageBox.Show(text, title, btn, positionBtn);
-			FormMain.CloseProgram();
+			AnotherException.SendUsualMessage(
+				AnotherException.TypeError.BUG,
+				AnotherException.ErrorBy.Application,
+				this,
+				title,
+				text,
+				TypeException.ToString()
+			);
 		}
 	}
 }
