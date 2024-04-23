@@ -66,7 +66,7 @@ namespace SplitFile.Exceptions
 #endif
 					AnotherException.SendUsualMessage(
 						AnotherException.TypeError.BUG,
-						AnotherException.ErrorBy.Application,
+						AnotherException.ErrorBy.APPLICATION,
 						this,
 						title,
 						text,
@@ -84,7 +84,7 @@ namespace SplitFile.Exceptions
 #endif
 					AnotherException.SendUsualMessage(
 						AnotherException.TypeError.SEVERE_BUG, 
-						AnotherException.ErrorBy.Application, 
+						AnotherException.ErrorBy.APPLICATION, 
 						this, 
 						title, 
 						text, 
@@ -104,7 +104,7 @@ namespace SplitFile.Exceptions
 #endif
 					AnotherException.SendUsualMessage(
 						AnotherException.TypeError.BUG,
-						AnotherException.ErrorBy.Application,
+						AnotherException.ErrorBy.APPLICATION,
 						this,
 						title,
 						text,

@@ -127,7 +127,7 @@ namespace SplitFile.Exceptions
 
 			AnotherException.SendUsualMessage(
 				AnotherException.TypeError.BUG,
-				AnotherException.ErrorBy.Application,
+				AnotherException.ErrorBy.APPLICATION,
 				this,
 				title,
 				text,

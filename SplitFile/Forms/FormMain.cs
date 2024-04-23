@@ -37,6 +37,15 @@ namespace SplitFile
 			Log.Info("Start application...");
 			Log.Info("====================");
 
+			AnotherException.SendUsualMessage(
+				AnotherException.TypeError.CRASH, 
+				AnotherException.ErrorBy.USER,
+				new Exception("Просто сообщение"), 
+				"Какая-то ошибка", 
+				"Текст ошибки.", 
+				"ERR_WORD"
+			);
+
 			_fileManagerSplit = new FileManager(PanelSplitPath, PanelSplitFiles, ButtonSplitFile);
 			
 			_fileManagerSplit.Init();
