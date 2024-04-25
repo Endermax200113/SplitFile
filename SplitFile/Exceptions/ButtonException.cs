@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using SplitFile.Util;
 using System;
 using System.Windows.Forms;
 
@@ -54,6 +55,8 @@ namespace SplitFile.Exceptions
 
 		public static bool CheckError<ButtonClass>(object sender, EventArgs e)
 		{
+			Log.Debug<ButtonClass>("Checking a button class...");
+
 			if (sender is null)
 				throw new ButtonException(TypeButtonException.ERR_BUTTON_NOT_EXISTS);
 			else if (!(sender is ButtonClass))
@@ -64,9 +67,12 @@ namespace SplitFile.Exceptions
 			return false;
 		}
 
-		public void SendMessage(string file, string method)
+		public void SendMessage<FileClass>(string method)
 		{
+			Log.Error<FileClass>("Error found!");
+
 			string title = null;
+			string file = nameof(FileClass);
 			string text;
 
 			switch (TypeException)
@@ -125,7 +131,7 @@ namespace SplitFile.Exceptions
 					break;
 			}
 
-			AnotherException.SendUsualMessage(
+			AnotherException.SendUsualMessage<FileClass>(
 				AnotherException.TypeError.BUG,
 				AnotherException.ErrorBy.APPLICATION,
 				this,

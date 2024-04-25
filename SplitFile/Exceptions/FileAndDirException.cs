@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using SplitFile.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,9 +65,12 @@ namespace SplitFile.Exceptions
 			}
 		}
 
-		public void SendMessage(string file, string method)
+		public void SendMessage<FileClass>(string method)
 		{
+			Log.Error<FileClass>("Error found!");
+
 			string title = null;
+			string file = nameof(FileClass);
 			string text;
 
 			switch (TypeException)
@@ -135,7 +139,7 @@ namespace SplitFile.Exceptions
 					break;
 			}
 
-			AnotherException.SendUsualMessage(
+			AnotherException.SendUsualMessage<FileAndDirException>(
 				AnotherException.TypeError.BUG,
 				AnotherException.ErrorBy.APPLICATION,
 				this,

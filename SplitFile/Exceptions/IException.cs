@@ -9,6 +9,6 @@ namespace SplitFile.Exceptions
 {
 	internal interface IException
 	{
-		void SendMessage(string file, string method);
+		void SendMessage<FileClass>(string method);
 	}
 }

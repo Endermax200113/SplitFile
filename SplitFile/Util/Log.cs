@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SplitFile.Util
 {
-	public static class Log
+	public sealed class Log
 	{
 		private static string Path { get; set; }
 		private static StreamWriter Stream { get; set; }
@@ -19,10 +19,12 @@ namespace SplitFile.Util
 		private static bool _ended = false;
 		private static string _pathFile = "";
 
-		private const string TYPE_MESSAGE_INFO = "[INFO] ";
-		private const string TYPE_MESSAGE_WARN = "[WARN] ";
-		private const string TYPE_MESSAGE_ERROR = "[ERROR]";
-		private const string TYPE_MESSAGE_DEBUG = "[DEBUG]";
+		private const string TYPE_MESSAGE_INFO = "INFO";
+		private const string TYPE_MESSAGE_WARN = "WARN";
+		private const string TYPE_MESSAGE_ERROR = "ERROR";
+		private const string TYPE_MESSAGE_DEBUG = "DEBUG";
+
+		private Log() { }
 
 		public static void Init()
 		{
@@ -41,7 +43,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(nameof(Log), nameof(Init));
+				err.SendMessage<Log>(nameof(Init));
 			}
 		}
 
@@ -50,9 +52,19 @@ namespace SplitFile.Util
 			Message(TYPE_MESSAGE_INFO, message);
 		}
 
+		public static void Info<NameClass>(string message)
+		{
+			Message<NameClass>(TYPE_MESSAGE_INFO, message);
+		}
+
 		public static void Warn(string message)
 		{
 			Message(TYPE_MESSAGE_WARN, message);
+		}
+
+		public static void Warn<NameClass>(string message)
+		{
+			Message<NameClass>(TYPE_MESSAGE_WARN, message);
 		}
 
 		public static void Error(string message)
@@ -60,14 +72,29 @@ namespace SplitFile.Util
 			Message(TYPE_MESSAGE_ERROR, message);
 		}
 
+		public static void Error<NameClass>(string message)
+		{
+			Message<NameClass>(TYPE_MESSAGE_ERROR, message);
+		}
+
 		public static void Error(Exception err)
 		{
 			Message(TYPE_MESSAGE_ERROR, err);
 		}
 
+		public static void Error<NameClass>(Exception err)
+		{
+			Message<NameClass>(TYPE_MESSAGE_ERROR, err);
+		}
+
 		public static void Debug(string message)
 		{
 			Message(TYPE_MESSAGE_DEBUG, message);
+		}
+
+		public static void Debug<NameClass>(string message)
+		{
+			Message<NameClass>(TYPE_MESSAGE_DEBUG, message);
 		}
 
 		private static void Message(string type, object message)
@@ -80,7 +107,7 @@ namespace SplitFile.Util
 				if (!_inited)
 					throw new InitException(InitException.TypeInitException.ERR_INITIAL_NOT_INITIALIZED);
 
-				string fullMsg = $"[{GetDateTime()}] {type} {message}";
+				string fullMsg = $"[{GetDateTime()}] [{type}] {message}";
 
 				Console.WriteLine(fullMsg);
 				Stream.WriteLine(fullMsg);
@@ -88,7 +115,29 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(nameof(Log), nameof(Message));
+				err.SendMessage<Log>(nameof(Message));
+			}
+		}
+
+		private static void Message<NameClass>(string type, object message)
+		{
+			try
+			{
+				if (_ended)
+					return;
+
+				if (!_inited)
+					throw new InitException(InitException.TypeInitException.ERR_INITIAL_NOT_INITIALIZED);
+
+				string fullMsg = $"[{GetDateTime()}] [{type}] <{nameof(NameClass)}> {message}";
+
+				Console.WriteLine(fullMsg);
+				Stream.WriteLine(fullMsg);
+				Stream.Flush();
+			}
+			catch (InitException err)
+			{
+				err.SendMessage<Log>($"{nameof(Message)}<{nameof(NameClass)}>");
 			}
 		}
 
@@ -108,7 +157,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(nameof(Log), nameof(End));
+				err.SendMessage<Log>(nameof(End));
 			}
 		}
 
@@ -121,7 +170,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(nameof(Log), nameof(GetPathFile));
+				err.SendMessage<Log>(nameof(GetPathFile));
 			}
 
 			return _pathFile;

@@ -102,10 +102,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(SelectButtonFile)
-				);
+				err.SendMessage<FileManager>(nameof(SelectButtonFile));
 			}
 			catch (ArgumentOutOfRangeException err)
 			{
@@ -138,7 +135,7 @@ namespace SplitFile.Util
 				"Программа будет закрыта после нажатии кнопки \'ОК\'";
 #endif
 
-			AnotherException.SendMessage(err, title, text);
+			AnotherException.SendMessage<FileManager>(err, title, text);
 		}
 
 		internal void SelectButtonDir(int idPanel, int idButton)
@@ -163,10 +160,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(SelectButtonDir)
-				);
+				err.SendMessage<FileManager>(nameof(SelectButtonDir));
 			}
 			catch (ArgumentOutOfRangeException err)
 			{
@@ -219,7 +213,7 @@ namespace SplitFile.Util
 							"Программа будет закрыта после нажатии кнопки \'ОК\'";
 #endif
 
-						AnotherException.SendMessage(err, title, text);
+						AnotherException.SendMessage<FileManager>(err, title, text);
 					}
 				}
 
@@ -286,10 +280,7 @@ namespace SplitFile.Util
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(FindAndSelectButtonDirectory)
-				);
+				err.SendMessage<FileManager>(nameof(FindAndSelectButtonDirectory));
 			}
 		}
 
@@ -314,10 +305,7 @@ namespace SplitFile.Util
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(FindAndSelectButtonDirectory)
-				);
+				err.SendMessage<FileManager>(nameof(FindAndSelectButtonDirectory));
 			}
 		}
 
@@ -419,24 +407,15 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(ChangePath)
-				);
+				err.SendMessage<FileManager>(nameof(ChangePath));
 			}
 			catch (FileAndDirException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(ChangePath)
-				);
+				err.SendMessage<FileManager>(nameof(ChangePath));
 			}
 			catch(ButtonException err)
 			{
-				err.SendMessage(
-					nameof(FileManager),
-					nameof(ChangePath)
-				);
+				err.SendMessage<FileManager>(nameof(ChangePath));
 			}
 			catch(ArgumentOutOfRangeException err)
 			{

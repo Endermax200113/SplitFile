@@ -31,19 +31,20 @@ namespace SplitFile.Exceptions
 			Log.Error(message);
 		}
 
-		public static void SendMessage(Exception err, string title, string text)
+		public static void SendMessage<NameClass>(Exception err, string title, string text)
 		{
 			Log.Info("Sending an error message to the user...");
 
 			MessageBoxButtons btn = MessageBoxButtons.OK;
 			FlexibleMaterialForm.ButtonsPosition positionBtn = FlexibleMaterialForm.ButtonsPosition.Right;
-
-			Log.Error(err);
+			
+			Log.Error<NameClass>(err);
+			Log.Debug("Opening an error dialog...");
 			MaterialMessageBox.Show(text, title, btn, positionBtn);
 			FormMain.CloseProgram();
 		}
 
-		public static void SendUsualMessage(TypeError type, ErrorBy by, Exception err, string titleErr, string textErr, string typeErr)
+		public static void SendUsualMessage<NameClass>(TypeError type, ErrorBy by, Exception err, string titleErr, string textErr, string typeErr)
 		{
 			Log.Info("Sending an error message to the user...");
 
@@ -107,8 +108,10 @@ namespace SplitFile.Exceptions
 				"Нажите 'Cancel', чтобы закрыть программу.";
 #endif
 
-			Log.Error(err);
-			
+			Log.Error<NameClass>(text);
+			Log.Error<NameClass>(err);
+			Log.Debug("Opening an error dialog...");
+
 			DialogResult dlg = MaterialMessageBox.Show(text, title, btn, positionBtn);
 
 			if (dlg == DialogResult.OK)

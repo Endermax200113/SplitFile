@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using SplitFile.Util;
 using System;
 using System.Windows.Forms;
 
@@ -48,9 +49,12 @@ namespace SplitFile.Exceptions
 			}
 		}
 
-		public void SendMessage(string file, string method)
+		public void SendMessage<FileClass>(string method)
 		{
+			Log.Error<FileClass>("Error found!");
+
 			string title = null;
+			string file = nameof(FileClass);
 			string text;
 
 			switch (TypeException)
@@ -64,7 +68,7 @@ namespace SplitFile.Exceptions
 #else
 					text = "Программа не инициализировал нужный объект, который без этого программа дальше работать не будет.";
 #endif
-					AnotherException.SendUsualMessage(
+					AnotherException.SendUsualMessage<FileClass>(
 						AnotherException.TypeError.BUG,
 						AnotherException.ErrorBy.APPLICATION,
 						this,
@@ -82,7 +86,7 @@ namespace SplitFile.Exceptions
 #else
 					text = "Программе не смог инициализировать нужный объект.";
 #endif
-					AnotherException.SendUsualMessage(
+					AnotherException.SendUsualMessage<FileClass>(
 						AnotherException.TypeError.SEVERE_BUG, 
 						AnotherException.ErrorBy.APPLICATION, 
 						this, 
@@ -102,7 +106,7 @@ namespace SplitFile.Exceptions
 #else
 					text = "Мы не знаем, из-за чего вызвана ошибка после попытки инициализации объекта.";
 #endif
-					AnotherException.SendUsualMessage(
+					AnotherException.SendUsualMessage<FileClass>(
 						AnotherException.TypeError.BUG,
 						AnotherException.ErrorBy.APPLICATION,
 						this,

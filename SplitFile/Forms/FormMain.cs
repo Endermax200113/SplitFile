@@ -37,15 +37,6 @@ namespace SplitFile
 			Log.Info("Start application...");
 			Log.Info("====================");
 
-			AnotherException.SendUsualMessage(
-				AnotherException.TypeError.CRASH, 
-				AnotherException.ErrorBy.USER,
-				new Exception("Просто сообщение"), 
-				"Какая-то ошибка", 
-				"Текст ошибки.", 
-				"ERR_WORD"
-			);
-
 			_fileManagerSplit = new FileManager(PanelSplitPath, PanelSplitFiles, ButtonSplitFile);
 			
 			_fileManagerSplit.Init();
@@ -82,10 +73,7 @@ namespace SplitFile
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage(
-						nameof(FormMain),
-						nameof(ButtonSplitAddFile_Click)
-				);
+				err.SendMessage<FormMain>(nameof(ButtonSplitAddFile_Click));
 			}
 		}
 
@@ -109,17 +97,11 @@ namespace SplitFile
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage(
-					nameof(FormMain), 
-					nameof(ButtonSplitAddFile_Click)
-				);
+				err.SendMessage<FormMain>(nameof(ButtonSplitAddFile_Click));
 			}
 			catch (FileAndDirException err)
 			{
-				err.SendMessage(
-					nameof(FormMain),
-					nameof(ButtonSplitAddFile_Click)
-				);
+				err.SendMessage<FormMain>(nameof(ButtonSplitAddFile_Click));
 			}
 		}
 

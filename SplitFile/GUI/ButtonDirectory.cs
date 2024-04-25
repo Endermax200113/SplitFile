@@ -62,10 +62,7 @@ namespace SplitFile.GUI
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage(
-					nameof(ButtonDirectory),
-					nameof(AddClick)
-				);
+				err.SendMessage<ButtonDirectory>(nameof(AddClick));
 			}
 		}
 
