@@ -47,6 +47,8 @@ namespace SplitFile.GUI
 			if (_inited)
 				return;
 
+			Log.Debug<PanelDirectory>($"Initializing a directory panel ({Name})...");
+
 			if (Directory == null)
 				LoadDrives();
 			else
@@ -60,6 +62,8 @@ namespace SplitFile.GUI
 
 		internal void Unselect()
 		{
+			Log.Debug<PanelDirectory>($"The selected directory button ({SelectedButtonDir.Name}) will soon turn off...");
+
 			SelectedButtonDir.UseAccentColor = false;
 			SelectedButtonDir.HighEmphasis = false;
 			SelectedButtonDir = null;
@@ -67,6 +71,8 @@ namespace SplitFile.GUI
 
 		internal void Remove()
 		{
+			Log.Debug<PanelDirectory>($"The directory panel ({Name}) is removing...");
+
 			_fileManager.PanelMain.Controls[$"DividerSplitDirectories{IdPanel}"].Dispose();
 			Dispose();
 		}
@@ -81,11 +87,14 @@ namespace SplitFile.GUI
 				Name = $"DividerSplitDirectories{IdPanel}"
 			};
 
+			Log.Debug<PanelDirectory>($"Adding divider ({divider.Name})...");
 			_fileManager.PanelMain.Controls.Add(divider);
 		}
 
 		private void LoadDirectoriesAndFiles()
 		{
+			Log.Debug<PanelDirectory>($"Loading directories ({Name})...");
+
 			int idButton = 0;
 
 			foreach (DirectoryInfo dir in Directory.GetDirectories())
@@ -99,6 +108,8 @@ namespace SplitFile.GUI
 					idButton++;
 				}
 			}
+
+			Log.Debug<PanelDirectory>($"Loading files ({Name})...");
 
 			idButton = 0;
 
@@ -134,6 +145,8 @@ namespace SplitFile.GUI
 
 		private void LoadDrives()
 		{
+			Log.Debug<PanelDirectory>("Loading drives...");
+
 			int idButton = 0;
 
 			foreach (DriveInfo drive in DriveInfo.GetDrives())

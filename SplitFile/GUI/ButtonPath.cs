@@ -40,13 +40,17 @@ namespace SplitFile.GUI
 			if (_inited)
 				return;
 
-			Click += AddClick;
+			Log.Debug<ButtonPath>($"Initializing a path button ({Name})...");
+
+			Click += JustClick;
 
 			_inited = true;
 		}
 
-		private void AddClick(object sender, EventArgs e)
+		private void JustClick(object sender, EventArgs e)
 		{
+			Log.Debug<ButtonPath>($"Path button ({Name}) clicked");
+
 			try
 			{
 				if (!ButtonException.CheckError<ButtonPath>(sender, e))
@@ -54,12 +58,14 @@ namespace SplitFile.GUI
 					int id = _fileManager.FreeId;
 
 					if (IdButton + 1 < id)
+					{
 						_fileManager.ChangePath(Path);
+					}
 				}
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage<ButtonPath>(nameof(AddClick));
+				err.SendMessage<ButtonPath>(nameof(JustClick));
 			}
 		}
 	}

@@ -49,6 +49,8 @@ namespace SplitFile
 
 		private void ButtonSplitAddFile_Click(object sender, EventArgs e)
 		{
+			Log.Debug<FormMain>("Clicked button (ButtonSplitAddFile)");
+
 			try
 			{
 				if (!ButtonException.CheckError<MaterialFloatingActionButton>(sender, e))
@@ -61,6 +63,8 @@ namespace SplitFile
 							dlg.InitialDirectory = Properties.Resources.GuidMyComputer;
 						else
 							dlg.InitialDirectory = path;
+
+						Log.Debug<FormMain>("Opening a file dialog...");
 
 						if (dlg.ShowDialog() == DialogResult.OK)
 						{
@@ -85,6 +89,8 @@ namespace SplitFile
 
 		private void ButtonSplitFile_Click(object sender, EventArgs e)
 		{
+			Log.Debug<FormMain>("Clicked button (ButtonSplitFile)");
+
 			try
 			{
 				if (!ButtonException.CheckError<MaterialButton>(sender, e))

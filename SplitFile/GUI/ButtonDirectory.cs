@@ -42,32 +42,45 @@ namespace SplitFile.GUI
 			if (_inited)
 				return;
 
+			Log.Debug<ButtonDirectory>($"Initializing a directory button ({Name})...");
+
 			if (CheckFiles())
-				Click += AddClick;
+				Click += JustClick;
 			else
+			{
+				Log.Debug<ButtonDirectory>($"The folder \"{Directory.Name}\" ({Name}) is empty");
 				Enabled = false;
+			}
 
 			_inited = true;
 		}
 
-		private void AddClick(object sender, EventArgs e)
+		private void JustClick(object sender, EventArgs e)
 		{
+			Log.Debug<ButtonDirectory>($"Directory button ({Name}) clicked");
+
 			try
 			{
 				if (!ButtonException.CheckError<ButtonDirectory>(sender, e))
 				{
 					if (!UseAccentColor)
-						_fileManager.ChangePath(Directory.FullName);
+					{
+						string file = Directory.FullName;
+
+						_fileManager.ChangePath(file);
+					}
 				}
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage<ButtonDirectory>(nameof(AddClick));
+				err.SendMessage<ButtonDirectory>(nameof(JustClick));
 			}
 		}
 
 		private bool CheckFiles()
 		{
+			Log.Debug<ButtonDirectory>($"Files in folder \"{Directory.Name}\" ({Name}) are checked...");
+
 			IEnumerable<FileSystemInfo> files = Directory.EnumerateFileSystemInfos();
 			int count = files.Count();
 

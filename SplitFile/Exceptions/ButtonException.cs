@@ -72,7 +72,7 @@ namespace SplitFile.Exceptions
 			Log.Error<FileClass>("Error found!");
 
 			string title = null;
-			string file = nameof(FileClass);
+			string file = typeof(FileClass).Name;
 			string text;
 
 			switch (TypeException)

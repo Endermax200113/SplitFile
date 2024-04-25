@@ -43,24 +43,31 @@ namespace SplitFile.GUI
 			if (_inited)
 				return;
 
-			Click += AddClick;
+			Log.Debug<ButtonFile>($"Initializing a file button ({Name})...");
+
+			Click += JustClick;
 
 			_inited = true;
 		}
 
-		private void AddClick(object sender, EventArgs e)
+		private void JustClick(object sender, EventArgs e)
 		{
+			Log.Debug<ButtonFile>($"File button ({Name}) clicked");
+
 			try
 			{
 				if (!ButtonException.CheckError<ButtonFile>(sender, e))
 				{
 					if (!HighEmphasis)
+					{
+						Log.Debug<FormMain>($"File button ({Name}) selecting...");
 						_fileManager.SelectButtonFile(OfIdPanel, IdButton);
+					}
 				}
 			}
 			catch (ButtonException err)
 			{
-				err.SendMessage<ButtonFile>(nameof(AddClick));
+				err.SendMessage<ButtonFile>(nameof(JustClick));
 			}
 		}
 	}

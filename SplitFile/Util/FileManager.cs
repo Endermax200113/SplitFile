@@ -60,6 +60,8 @@ namespace SplitFile.Util
 
 		private void RemoveAt(int id)
 		{
+			Log.Debug<FileManager>($"Removing a separate panel at ID {id}...");
+
 			try
 			{
 				foreach (ButtonFile btn in ListSeparatePanel[id].PanelDirectory.ListButtonFiles)
@@ -86,6 +88,8 @@ namespace SplitFile.Util
 
 		internal void SelectButtonFile(int idPanel, int idButton)
 		{
+			Log.Debug<FileManager>($"The file button (ID: {idButton}) is selecting on the panel (ID: {idPanel})...");
+
 			try
 			{
 				if (!_inited)
@@ -112,34 +116,34 @@ namespace SplitFile.Util
 
 		private void SendMessageIndexOutOfRange(Exception err, string method)
 		{
-			string title;
+			Log.Error<FileManager>("Error found!");
+
+			string title = null;
 			string text;
 
 #if DEBUG
 			title = "Индекс за пределы массива";
-			text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-				"Индекс был указан неверно, т.к. он находится за пределы массива\n" +
+			text = "Индекс был указан неверно, т.к. он находится за пределы массива\n" +
 				$"\tв файле \'{nameof(FileManager)}\'\n" +
-				$"\tв методе \'{method}\'.\n\n" +
-				"Стек ошибки:\n" +
-				$"{err}";
+				$"\tв методе \'{method}\'.";
 #else
-			title = "Программная ошибка";
-			text = "Эта ошибка вызвана не из-за Вас.\n" +
-				"В программе существует список, в котором указан неверный индекс. Это баг.\n" +
-				"Если Вы видете эту ошибку, пожалуйста, напишите об этом по ссылке ниже:\n" +
-				"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-				$"Ошибка: ERR_LIST_OUT_OF_RANGE\n" +
-				"Стек ошибки:\n" +
-				$"{err}\n\n" +
-				"Программа будет закрыта после нажатии кнопки \'ОК\'";
+			text = "В программе существует список, в котором указан неверный индекс.";
 #endif
 
-			AnotherException.SendMessage<FileManager>(err, title, text);
+			AnotherException.SendUsualMessage<FileManager>(
+				AnotherException.TypeError.BUG,
+				AnotherException.ErrorBy.APPLICATION,
+				err,
+				title,
+				text,
+				"ERR_LIST_OUT_OF_RANGE"
+			);
 		}
 
 		internal void SelectButtonDir(int idPanel, int idButton)
 		{
+			Log.Debug<FileManager>($"The directory button (ID: {idButton}) is selecting in the panel (ID: {idPanel})");
+
 			try
 			{
 				if (!_inited)
@@ -175,6 +179,8 @@ namespace SplitFile.Util
 
 			if (dir != null)
 			{
+				Log.Debug<FileManager>("Adding the panel and the path button...");
+
 				panel = new PanelDirectory(this, FreeId, dir);
 				btn = new ButtonPath(this, FreeId, FreeId == 1 ? dir.Name.Replace("\\", string.Empty) : dir.Name, dir.FullName);
 			}
@@ -190,30 +196,28 @@ namespace SplitFile.Util
 				catch (AnotherException err)
 				{
 					{
-						string title;
+						Log.Error<FileManager>("Error found!");
+
+						string title = null;
 						string text;
 
 #if DEBUG
 						title = "Неверный индентификатор";
-						text = "Ошибка со стороны программы. Сообщение для разработчика:\n" +
-							"Свободный идентификатор для инициализации не равен нулю\n" +
+						text = "Свободный идентификатор для инициализации не равен нулю\n" +
 							$"\tв файле \'{nameof(FileManager)}\'\n" +
-							$"\tв методе \'{nameof(Add)}\'.\n\n" +
-							"Стек ошибки:\n" +
-							$"{err}";
+							$"\tв методе \'{nameof(Add)}\'.";
 #else
-						title = "Сбой программы";
-						text = "Этот сбой вызван не из-за Вас.\n" +
-							"По непонятной причине, программа начала инициализироваться не с нуля. Это серьёзный баг.\n" +
-							"Если Вы видете эту ошибку, пожалуйста, не поленитесь, напишите об этом по ссылке ниже:\n" +
-							"https://github.com/Endermax200113/SplitFile/issues/new\n\n" +
-							$"Ошибка: ERR_ID_INIT_NOT_ZERO\n" +
-							"Стек ошибки:\n" +
-							$"{err}\n\n" +
-							"Программа будет закрыта после нажатии кнопки \'ОК\'";
+						text = "По непонятной причине, программа начала инициализироваться не с нуля.";
 #endif
 
-						AnotherException.SendMessage<FileManager>(err, title, text);
+						AnotherException.SendUsualMessage<FileManager>(
+							AnotherException.TypeError.CRASH,
+							AnotherException.ErrorBy.APPLICATION,
+							err,
+							title,
+							text,
+							"ERR_ID_INIT_NOT_ZERO"
+						);
 					}
 				}
 
@@ -261,6 +265,8 @@ namespace SplitFile.Util
 
 		private void FindAndSelectButtonDirectory(int idPanel, string[] dirs)
 		{
+			Log.Debug<FileManager>($"Searching and selecting a directory button in the panel (ID: {idPanel})");
+
 			try
 			{
 				int indexButton = -1;
@@ -286,6 +292,8 @@ namespace SplitFile.Util
 
 		private void FindAndSelectButtonFile(int idPanel, string[] dirs)
 		{
+			Log.Debug<FileManager>($"Searching and selecting a file button in the panel (ID: {idPanel})");
+
 			try
 			{
 				int indexButton = -1;
@@ -316,6 +324,8 @@ namespace SplitFile.Util
 
 		public void ChangePath(string path)
 		{
+			Log.Debug<FileManager>($"Changing path ({path})...");
+
 			try
 			{
 				if (!_inited)
@@ -421,6 +431,8 @@ namespace SplitFile.Util
 			{
 				SendMessageIndexOutOfRange(err, nameof(ChangePath));
 			}
+
+			Log.Debug<FileManager>($"Path ({path}) is changed");
 		}
 	}
 }

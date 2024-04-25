@@ -121,6 +121,8 @@ namespace SplitFile.Util
 
 		private static void Message<NameClass>(string type, object message)
 		{
+			string nameClass = typeof(NameClass).Name;
+			
 			try
 			{
 				if (_ended)
@@ -129,7 +131,7 @@ namespace SplitFile.Util
 				if (!_inited)
 					throw new InitException(InitException.TypeInitException.ERR_INITIAL_NOT_INITIALIZED);
 
-				string fullMsg = $"[{GetDateTime()}] [{type}] <{nameof(NameClass)}> {message}";
+				string fullMsg = $"[{GetDateTime()}] [{type}] <{nameClass}> {message}";
 
 				Console.WriteLine(fullMsg);
 				Stream.WriteLine(fullMsg);
@@ -137,7 +139,7 @@ namespace SplitFile.Util
 			}
 			catch (InitException err)
 			{
-				err.SendMessage<Log>($"{nameof(Message)}<{nameof(NameClass)}>");
+				err.SendMessage<Log>($"{nameof(Message)}<{nameClass}>");
 			}
 		}
 

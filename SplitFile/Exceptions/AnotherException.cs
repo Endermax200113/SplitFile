@@ -111,7 +111,7 @@ namespace SplitFile.Exceptions
 			Log.Error<NameClass>(text);
 			Log.Error<NameClass>(err);
 			Log.Debug("Opening an error dialog...");
-
+			
 			DialogResult dlg = MaterialMessageBox.Show(text, title, btn, positionBtn);
 
 			if (dlg == DialogResult.OK)
