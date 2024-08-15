@@ -186,7 +186,7 @@ namespace SplitFile.Util
 			}
 			else
 			{
-				Log.Debug("Adding start panel and path button...");
+				Log.Debug<FileManager>("Adding start panel and path button...");
 
 				try
 				{

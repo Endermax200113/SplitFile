@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using SplitFile.Exceptions;
+using SplitFile.Forms;
 using SplitFile.GUI;
 using SplitFile.Util;
 using System;
@@ -98,7 +99,10 @@ namespace SplitFile
 					if (_fileManagerSplit.SelectedButtonFile == null || _fileManagerSplit.SelectedButtonFile.File == null)
 						throw new FileAndDirException(FileAndDirException.TypeFileAndDirException.ERR_FILE_NOT_EXIST);
 
+					FileInfo file = _fileManagerSplit.SelectedButtonFile.File;
+					var formSplit = new FormSplit(file);
 
+					formSplit.ShowDialog();
 				}
 			}
 			catch (ButtonException err)
